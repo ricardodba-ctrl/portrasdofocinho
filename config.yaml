@@ -42,7 +42,7 @@ newsletter:
   consent_text: "Quero receber o guia e a newsletter do Por Trás do Focinho. Posso cancelar quando quiser, com um clique."
 
 store:
-  url: ""                     # PENDENTE: URL da loja Nuvemshop (Patas que Transformam)
+  url: "https://patasemfoco.lojavirtualnuvem.com.br"
   donation_per_item: 7        # R$ destinados por camiseta solidária (configurável)
   campaign_name: "Primeira Missão: 100 camisetas, um propósito"
   campaign_goal: 100
