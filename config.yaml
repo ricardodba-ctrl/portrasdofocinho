@@ -37,7 +37,7 @@ affiliates:
 
 newsletter:
   # Brevo, MailerLite ou ConvertKit: cole aqui a URL de envio do formulário (action)
-  form_action: "https://d9b41528.sibforms.com/serve/MUIFAFijRrj1KaXzuUc2-WXQMRNwwieIH1d-_mXqLVrLpdxgwvV5sNSydYtKqXAyJhwFJBM7HPdHl-hNY6bMDtSrcg41U9msGqx8OSk_C3wgfyMHDCiCUEsHzoSAGrNOfwi3KpTHC0BwRdHQ_a_EAab0x-nuvB8sojpcvpm-KAkGPBGyyFLbYUZyY8C2Z-r-IkdisKPiWEAGz1UTsA"
+  form_action: "https://d9b41528.sibforms.com/serve/MUIFAFijRrj1KaXzuUc2-WXQMRNwwieIH1d-_mXqLVrLpdxgwvV5sNSydYtKqXAyJhwFJBM7HPdHl-hNY6bMDtSrcg41U9msGqx8OSk_C3wgfyMHDCiCUEsHzoSAGrNOfwi3KpTHC0BwRdHQ_a_EAab0x-nuvB8sojpcvpm-KAkGPBGyyFLbYUZyY8C2Z-r-IkdisKPiWEAGz1UTsA=="
   email_field: "EMAIL"
   consent_text: "Quero receber o guia e a newsletter do Por Trás do Focinho. Posso cancelar quando quiser, com um clique."
 
