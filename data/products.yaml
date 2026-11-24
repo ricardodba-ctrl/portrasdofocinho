@@ -1,58 +1,69 @@
 # Catálogo de recomendações (afiliados).
 # Regra editorial: só descrevemos para que o produto serve e para quem faz sentido.
 # Nunca inventamos preço, nota, teste ou experiência pessoal. Preço e avaliações ficam na loja.
-# Para cada loja, use o link de produto específico quando tiver; a busca é o padrão provisório.
+# Campo links: link de afiliado do produto específico (tem prioridade). Sem links, o site usa a busca genérica.
+# Links Mercado Livre dos 10 primeiros itens gerados em 24/11/2026 (nota >= 4,6, mais vendidos, sem anúncio patrocinado).
 items:
   - id: cama-ortopedica
     name: Cama ortopédica com espuma de alta densidade
     for: Cães idosos, raças grandes e cães com articulações sensíveis.
     why: Distribui o peso do corpo e evita que o cão afunde até tocar o chão.
     search: cama ortopedica cachorro espuma
+    links: {Mercado Livre: "https://meli.la/2xCfNfb"}
   - id: cama-ninho
-    name: Cama ninho com borda alta
-    for: Cães que dormem enrolados e gostam de apoiar a cabeça.
+    name: Cama ninho redonda com borda alta
+    for: Gatos e cães pequenos que dormem enrolados e gostam de apoiar a cabeça.
     why: A borda dá sensação de abrigo e serve de travesseiro.
     search: cama ninho cachorro borda alta
+    links: {Mercado Livre: "https://meli.la/25oggG5"}
   - id: colchonete-impermeavel
     name: Colchonete com capa impermeável e removível
     for: Filhotes, cães idosos e casas com área externa.
     why: A capa sai para lavar e a espuma não absorve xixi nem umidade.
     search: colchonete cachorro capa impermeavel removivel
+    links: {Mercado Livre: "https://meli.la/2q9P4cr"}
   - id: kong-recheavel
     name: Brinquedo recheável de borracha resistente
     for: Cães que ficam sozinhos ou que mastigam muito.
     why: Rechear e congelar prolonga a atividade e ocupa a mente.
     search: brinquedo recheavel cachorro borracha
+    links: {Mercado Livre: "https://meli.la/2kxmNiS"}
   - id: tapete-lamber
     name: Tapete de lamber com ventosa
     for: Cães ansiosos e momentos como banho ou corte de unhas.
     why: Lamber é uma atividade calmante; o tapete espalha o petisco e prolonga a tarefa.
     search: tapete de lamber cachorro
+    links: {Mercado Livre: "https://meli.la/2cjUd3e"}
   - id: tapete-farejar
     name: Tapete de farejar (snuffle mat)
     for: Cães que comem rápido demais ou se entediam em casa.
     why: Transforma a refeição em busca pelo faro, o sentido mais forte do cão.
     search: tapete farejador cachorro
+    links: {Mercado Livre: "https://meli.la/2guFSG8"}
   - id: comedouro-lento
     name: Comedouro lento (slow feeder)
     for: Cães que engolem a ração em segundos.
     why: Os relevos obrigam o cão a comer mais devagar.
     search: comedouro lento cachorro
+    links: {Mercado Livre: "https://meli.la/1LeTNKR"}
   - id: portao-pet
     name: Portãozinho de segurança para pets
     for: Casas com escada, filhotes e convivência com bebês.
     why: Cria áreas seguras sem trancar o cão em um cômodo.
     search: portao seguranca pet escada
+    links: {Mercado Livre: "https://meli.la/2hpz6Kw"}
   - id: caixa-transporte
     name: Caixa de transporte ventilada
     for: Viagens, idas ao veterinário e gatos.
     why: Uma caixa conhecida e confortável reduz o estresse do deslocamento.
     search: caixa transporte pet
+    links: {Mercado Livre: "https://meli.la/1gMxmKn"}
   - id: arranhador
-    name: Arranhador vertical alto e firme
+    name: Arranhador de poste firme
     for: Gatos de todas as idades.
     why: Arranhar é necessidade do gato; um arranhador estável poupa o sofá.
     search: arranhador gato vertical
+    links: {Mercado Livre: "https://meli.la/19Qe5em"}
 
   # ---- Achadinhos do Focinho: produtos específicos com link de afiliado Mercado Livre
   # Links conferidos em 24/11/2026 (os mesmos usados nos Shorts do canal). Preço fica na loja.
