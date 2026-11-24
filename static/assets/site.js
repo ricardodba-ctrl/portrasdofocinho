@@ -62,10 +62,10 @@
     if (!ok.checked) { msg.textContent = "Marque a caixa de consentimento para receber o guia."; ok.focus(); return; }
     const action = f.dataset.action;
     if (!action) { msg.textContent = "Inscrição ainda não conectada: o provedor de e-mail será configurado no lançamento."; return; }
-    const body = new FormData(); body.append(f.dataset.field || "EMAIL", email.value);
+    const body = new FormData(); body.append(f.dataset.field || "EMAIL", email.value); body.append("email_address_check", ""); body.append("locale", "pt"); body.append("html_type", "simple");
     try {
       await fetch(action, { method: "POST", body, mode: "no-cors" });
-      msg.innerHTML = 'Pronto! Confirme no seu e-mail. Enquanto isso, <a href="' + P.guide + '">abra o guia aqui</a>.';
+      msg.innerHTML = 'Pronto! Você está na lista. <a href="' + P.guide + '">Abra o guia aqui</a>.';
       track("generate_lead", { method: "newsletter" }); f.reset();
     } catch (err) { msg.textContent = "Não conseguimos enviar agora. Verifique sua conexão e tente de novo."; }
   }));
