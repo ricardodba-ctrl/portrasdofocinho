@@ -160,6 +160,9 @@ def cover_svg(seed, color, animal, w=1200, h=675):
 
 # ---------------------------------------------------------------- afiliados
 def aff_links(p):
+    # Produto com link de afiliado próprio (ex.: meli.la) tem prioridade sobre a busca genérica.
+    if p.get("links"):
+        return [(store, href) for store, href in p["links"].items() if href]
     a = CFG["affiliates"]; q = p["search"]
     amz = f"https://www.amazon.com.br/s?k={quote_plus(q)}" + (f"&tag={a['amazon_tag']}" if a.get("amazon_tag") else "")
     return [("Amazon", amz),

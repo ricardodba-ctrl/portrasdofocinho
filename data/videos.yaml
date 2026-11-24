@@ -25,3 +25,10 @@ items:
   - title: "Seu cachorro entende o que você fala? A ciência olhou o cérebro dele"
     youtube_id: "S7EVRn2npuQ"
     article: comportamento-do-cachorro-guia-completo
+  # Adicionados em 24/11/2026: Shorts mais vistos do canal ligados aos artigos do mesmo tema.
+  - title: "Por que o seu cachorro coloca a PATA em você?"
+    youtube_id: "Nz43QptCuGk"
+    article: por-que-o-cachorro-coloca-a-pata-em-voce
+  - title: "Seu gato te IGNORA quando você chama? A ciência explica"
+    youtube_id: "0B9a-bLs2wk"
+    article: gato-me-ignora

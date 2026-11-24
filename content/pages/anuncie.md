@@ -33,6 +33,6 @@ Não publicamos alegações de saúde sem comprovação, avaliações com result
 
 ## Mídia kit
 
-Audiência do portal, inscritos e visualizações do canal, perfil do público e valores são enviados no mídia kit, atualizado todo mês com dados do Google Analytics e do YouTube Studio.
+Números reais do canal, perfil do público, formatos e valores de referência estão no [mídia kit](@page:midia-kit), atualizado todo mês com dados do YouTube Studio e do Google Analytics.
 
 **Solicite pelo e-mail:** contato@portrasdofocinho.com, com o assunto “Anuncie”.

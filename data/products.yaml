@@ -53,3 +53,66 @@ items:
     for: Gatos de todas as idades.
     why: Arranhar é necessidade do gato; um arranhador estável poupa o sofá.
     search: arranhador gato vertical
+
+  # ---- Achadinhos do Focinho: produtos específicos com link de afiliado Mercado Livre
+  # Links conferidos em 24/11/2026 (os mesmos usados nos Shorts do canal). Preço fica na loja.
+  - id: ml-tapete-coletor-areia
+    name: Tapete coletor para caixa de areia
+    for: Casas com gato que espalha areia ao sair da caixa.
+    why: Os relevos seguram os grãos presos nas patas e o tapete é fácil de sacudir e lavar.
+    group: gatos
+    links: {Mercado Livre: "https://meli.la/2XfSZaU"}
+  - id: ml-fonte-agua
+    name: Fonte de água com filtro (1,5 L, USB)
+    for: Gatos que bebem pouca água ou preferem água corrente.
+    why: "A água em movimento atrai muitos gatos; o filtro precisa de limpeza e troca regular."
+    group: gatos
+    links: {Mercado Livre: "https://meli.la/2dnErNg"}
+  - id: ml-areia-mandioca
+    name: Areia de mandioca biodegradável (4 kg)
+    for: Tutores que querem areia vegetal, que forma torrões e pode ser descartada com menos impacto.
+    why: "Troque aos poucos, misturando com a areia antiga: muitos gatos estranham mudança brusca."
+    group: gatos
+    links: {Mercado Livre: "https://meli.la/2LPLKHH"}
+  - id: ml-varinha-gato
+    name: Kit de varinhas e brinquedos interativos para gato
+    for: Gatos de apartamento que caçam os pés e os objetos da casa.
+    why: Sessões curtas de caça com varinha gastam energia e reduzem a caça a coisas proibidas.
+    group: gatos
+    links: {Mercado Livre: "https://meli.la/1umXznJ"}
+  - id: ml-tunel-gato
+    name: Túnel dobrável para gatos
+    for: Gatos que gostam de se esconder e de brincar de emboscada.
+    why: Esconderijo é necessidade do gato; o túnel vira abrigo e brinquedo ao mesmo tempo.
+    group: gatos
+    links: {Mercado Livre: "https://meli.la/2vG5ddH"}
+  - id: ml-sache-gato
+    name: Sachês de alimento úmido para gato adulto
+    for: Gatos que bebem pouca água, como complemento da alimentação.
+    why: O alimento úmido aumenta a ingestão de água. Mudanças na dieta devem ser feitas com orientação veterinária.
+    group: gatos
+    links: {Mercado Livre: "https://meli.la/1PKZVU2"}
+  - id: ml-kit-mordedores
+    name: Kit com 6 mordedores para filhote
+    for: Filhotes na troca de dentes que mordem móveis, sapatos e mãos.
+    why: Oferecer alternativas permitidas e trocar o objeto proibido pelo mordedor ensina o que pode morder.
+    group: caes
+    links: {Mercado Livre: "https://meli.la/2ceWcnZ"}
+  - id: ml-tapete-higienico
+    name: Tapete higiênico para cães (50 unidades)
+    for: Filhotes aprendendo onde fazer xixi e cães que ficam muito tempo em apartamento.
+    why: Um lugar fixo e fácil de identificar ajuda o filhote a acertar; recompense sempre que ele usar.
+    group: caes
+    links: {Mercado Livre: "https://meli.la/2hTKmSw"}
+  - id: ml-caminha-impermeavel
+    name: Caminha impermeável com zíper (cão pequeno e gato)
+    for: Filhotes, pets idosos e quem precisa lavar a capa com frequência.
+    why: A capa impermeável sai pelo zíper e protege a espuma de xixi e umidade.
+    group: casa
+    links: {Mercado Livre: "https://meli.la/26v6duA"}
+  - id: ml-pote-racao
+    name: Pote hermético para ração (2,5 L, com medidor)
+    for: Quem compra ração em saco grande.
+    why: Guardar a ração no saco original dentro do pote fechado ajuda a manter o alimento protegido de ar e umidade.
+    group: casa
+    links: {Mercado Livre: "https://meli.la/27S6fZz"}

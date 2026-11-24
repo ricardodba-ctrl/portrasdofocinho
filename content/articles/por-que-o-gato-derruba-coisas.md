@@ -13,6 +13,7 @@ faq:
     a: "Muitas vezes sim, de forma intencional, mas não por maldade. Costuma ser curiosidade, brincadeira ou busca de atenção."
   - q: "Como evitar que o gato derrube objetos?"
     a: "Retire o que é frágil ou perigoso do alcance, ofereça brincadeiras diárias com varinha e brinquedos que ele possa empurrar, e evite reagir com atenção exagerada ao ato."
+products: [ml-varinha-gato, ml-tunel-gato]
 ---
 
 **Resposta rápida:** o gato empurra objetos porque é um caçador. Ele testa como a coisa se move, se faz barulho e como você reage. Na prática, quase sempre é uma mistura de curiosidade, brincadeira e atenção.

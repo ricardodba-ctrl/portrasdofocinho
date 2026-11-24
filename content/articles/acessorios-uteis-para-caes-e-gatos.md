@@ -8,7 +8,7 @@ date: 2026-11-30
 cluster: compras
 keywords: [acessórios para cachorro, acessórios para gato, produtos úteis para pets, o que comprar para cachorro, o que comprar para gato]
 related: [como-escolher-cama-para-cachorro, brinquedos-para-cachorro-que-fica-sozinho]
-products: [tapete-lamber, comedouro-lento, arranhador, caixa-transporte, portao-pet]
+products: [tapete-lamber, comedouro-lento, arranhador, caixa-transporte, portao-pet, ml-fonte-agua, ml-pote-racao, ml-tapete-coletor-areia]
 faq:
   - q: "Preciso comprar todos esses acessórios?"
     a: "Não. Escolha pelo que o seu pet precisa. Um cão que come rápido pode se beneficiar de um comedouro lento; um gato que arranha o sofá, de um arranhador firme."

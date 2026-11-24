@@ -9,7 +9,7 @@ pillar: true
 cluster: primeiros-meses
 keywords: [preparar casa para filhote, enxoval filhote cachorro, filhote chegando em casa, primeiros dias filhote]
 related: [cachorro-e-crianca-convivencia-segura, alimentos-proibidos-para-caes, como-escolher-cama-para-cachorro, adocao-responsavel]
-products: [colchonete-impermeavel, portao-pet, kong-recheavel, caixa-transporte]
+products: [colchonete-impermeavel, portao-pet, kong-recheavel, caixa-transporte, ml-kit-mordedores, ml-tapete-higienico]
 faq:
   - q: "O filhote pode dormir no quarto?"
     a: "Pode. Nos primeiros dias, dormir perto do tutor ajuda o filhote a se sentir seguro longe da mãe e dos irmãos. Se você não quer o cão no quarto no futuro, faça a transição aos poucos."

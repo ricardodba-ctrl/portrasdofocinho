@@ -9,7 +9,7 @@ pillar: true
 cluster: compras
 keywords: [melhor cama para cachorro, como escolher cama de cachorro, cama ortopédica cachorro, tamanho cama cachorro]
 related: [quantas-horas-um-cachorro-dorme, por-que-o-cachorro-gira-antes-de-deitar, brinquedos-para-cachorro-que-fica-sozinho]
-products: [cama-ortopedica, cama-ninho, colchonete-impermeavel]
+products: [cama-ortopedica, cama-ninho, colchonete-impermeavel, ml-caminha-impermeavel]
 faq:
   - q: "Como medir o tamanho certo da cama?"
     a: "Meça o cão deitado na posição em que mais dorme, do focinho à base do rabo, e acrescente de 15 a 30 centímetros. Para cães que dormem esticados, considere também a largura com as patas estendidas."
