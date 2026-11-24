@@ -17,7 +17,7 @@ social:
   tiktok: ""      # PENDENTE: @ do TikTok
 
 analytics:
-  ga4_id: ""          # ex.: G-XXXXXXXXXX  (Google Analytics 4)
+  ga4_id: "G-N0LKGNWRCN"
   gtm_id: ""          # ex.: GTM-XXXXXXX   (opcional; se preencher, use o GA4 dentro do GTM)
   search_console_verification: ""   # conteúdo da meta google-site-verification
 
