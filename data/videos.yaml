@@ -1,0 +1,16 @@
+# Vídeos do canal Por Trás do Focinho para incorporar nos artigos e na home.
+# Preencha youtube_id (o código depois de "v=" ou de "shorts/") e o artigo relacionado (slug).
+# Enquanto youtube_id estiver vazio, o portal mostra um convite para o canal.
+items:
+  - title: Por que seu cachorro te segue pela casa?
+    youtube_id: ""
+    article: por-que-meu-cachorro-me-segue-pela-casa
+  - title: Cachorro sente saudade quando você sai?
+    youtube_id: ""
+    article: ansiedade-de-separacao-em-caes
+  - title: Quantas horas um cachorro precisa dormir?
+    youtube_id: ""
+    article: quantas-horas-um-cachorro-dorme
+  - title: O que significa a piscada lenta do gato
+    youtube_id: ""
+    article: piscada-lenta-gato

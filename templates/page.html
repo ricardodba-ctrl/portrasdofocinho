@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block main %}
+<header class="page-head">
+  <div class="page-head-in">
+    {{ m.crumbs([("Início", url('')), (p.title, None)]) }}
+    <h1>{{ p.title }}</h1>
+    {% if p.description %}<p>{{ p.description }}</p>{% endif %}
+  </div>
+</header>
+<div class="page-body prose {{ p.width or '' }}">
+  {{ body }}
+  {% if p.updated %}<p class="small">Última atualização: {{ date_br(p.updated) }}.</p>{% endif %}
+</div>
+{% endblock %}

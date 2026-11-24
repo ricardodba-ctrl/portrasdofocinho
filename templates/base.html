@@ -1,0 +1,92 @@
+{% import "_macros.html" as m %}<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}{% if not is_home %} | {{ cfg.site.name }}{% endif %}</title>
+<meta name="description" content="{{ description }}">
+{% if noindex %}<meta name="robots" content="noindex, follow">{% else %}<meta name="robots" content="index, follow, max-image-preview:large">{% endif %}
+<link rel="canonical" href="{{ canonical }}">
+<meta property="og:site_name" content="{{ cfg.site.name }}">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:type" content="{{ og_type or 'website' }}">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:image" content="{{ og_image or abs_url('assets/og-default.png') }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0E3B43">
+<link rel="icon" href="{{ url('assets/favicon.svg') }}" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="{{ cfg.site.name }}" href="{{ url('feed.xml') }}">
+{% if cfg.analytics.search_console_verification %}<meta name="google-site-verification" content="{{ cfg.analytics.search_console_verification }}">{% endif %}
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght,SOFT@9..144,600..800,100&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url('assets/site.css') }}">
+<script>
+/* LGPD: Consent Mode v2 — tudo negado até o leitor escolher */
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});
+try{if(localStorage.getItem('ptf-consent')==='all'){gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});}}catch(e){}
+</script>
+{% if cfg.analytics.gtm_id %}<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','{{ cfg.analytics.gtm_id }}');</script>
+{% elif cfg.analytics.ga4_id %}<script async src="https://www.googletagmanager.com/gtag/js?id={{ cfg.analytics.ga4_id }}"></script><script>gtag('js',new Date());gtag('config','{{ cfg.analytics.ga4_id }}');</script>{% endif %}
+{% if cfg.adsense.client_id %}<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ cfg.adsense.client_id }}" crossorigin="anonymous"></script>{% endif %}
+{% block schema %}{% endblock %}
+</head>
+<body class="{% block bodyclass %}{% endblock %}">
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="{{ url('') }}" aria-label="{{ cfg.site.name }} — página inicial">{{ m.logo(38) }}<span>Por Trás<br>do Focinho</span></a>
+    <nav class="nav" aria-label="Categorias">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+      <ul id="menu">
+        {% for c in cats %}<li><a href="{{ url('categoria/' ~ c.slug) }}">{{ c.short }}</a></li>{% endfor %}
+        <li class="hl"><a href="{{ url('patas-que-transformam') }}">Patas que Transformam</a></li>
+      </ul>
+    </nav>
+    <button class="search-btn" type="button" aria-haspopup="dialog" aria-controls="search"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5 L21 21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>Buscar</span></button>
+    <a class="btn btn-yt yt-top" href="{{ cfg.social.youtube_subscribe }}" target="_blank" rel="noopener">YouTube</a>
+  </div>
+</header>
+
+<main id="conteudo">{% block main %}{% endblock %}</main>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div class="foot-brand">
+      <a class="brand" href="{{ url('') }}">{{ m.logo(44) }}<span>Por Trás<br>do Focinho</span></a>
+      <p>{{ cfg.site.tagline }}</p>
+      <p class="social"><a href="{{ cfg.social.youtube }}" target="_blank" rel="noopener">YouTube</a>{% if cfg.social.instagram %} <a href="{{ cfg.social.instagram }}" target="_blank" rel="noopener">Instagram</a>{% endif %}{% if cfg.social.tiktok %} <a href="{{ cfg.social.tiktok }}" target="_blank" rel="noopener">TikTok</a>{% endif %} <a href="{{ url('feed.xml') }}">RSS</a></p>
+    </div>
+    <div><h2>Explore</h2><ul>{% for c in cats %}<li><a href="{{ url('categoria/' ~ c.slug) }}">{{ c.name }}</a></li>{% endfor %}</ul></div>
+    <div><h2>O projeto</h2><ul>
+      <li><a href="{{ url('sobre') }}">Sobre nós</a></li><li><a href="{{ url('patas-que-transformam') }}">Patas que Transformam</a></li>
+      <li><a href="{{ url('loja') }}">Loja</a></li><li><a href="{{ url('videos') }}">Vídeos</a></li>
+      <li><a href="{{ url('envie-sua-historia') }}">Envie sua história</a></li><li><a href="{{ url('newsletter') }}">Newsletter</a></li>
+      <li><a href="{{ url('anuncie') }}">Anuncie</a></li><li><a href="{{ url('contato') }}">Contato</a></li></ul></div>
+    <div><h2>Transparência</h2><ul>
+      <li><a href="{{ url('politica-editorial') }}">Política editorial</a></li><li><a href="{{ url('aviso-veterinario') }}">Aviso sobre saúde animal</a></li>
+      <li><a href="{{ url('politica-de-afiliados') }}">Política de afiliados</a></li><li><a href="{{ url('conteudo-patrocinado') }}">Conteúdo patrocinado</a></li>
+      <li><a href="{{ url('politica-de-privacidade') }}">Privacidade</a></li><li><a href="{{ url('politica-de-cookies') }}">Cookies</a></li>
+      <li><a href="{{ url('termos-de-uso') }}">Termos de uso</a></li><li><button type="button" class="linkish" data-cookie-open>Preferências de cookies</button></li></ul></div>
+  </div>
+  <p class="foot-legal">© {{ year }} {{ cfg.site.name }}. O conteúdo deste site é informativo e não substitui a consulta com um médico-veterinário.</p>
+</footer>
+
+<div class="search" id="search" role="dialog" aria-modal="true" aria-label="Buscar no site" hidden>
+  <div class="search-box">
+    <div class="search-row"><label class="sr" for="q">Buscar</label><input id="q" type="search" placeholder="Ex.: ansiedade, filhote, ronronar…" autocomplete="off"><button type="button" class="search-close">Fechar</button></div>
+    <ul class="search-res" aria-live="polite"></ul>
+  </div>
+</div>
+
+<div class="cookie" id="cookie" hidden>
+  <p>Usamos cookies para medir audiência e exibir anúncios. Você escolhe. <a href="{{ url('politica-de-cookies') }}">Saiba mais</a></p>
+  <div><button class="btn btn-ghost" data-consent="essential">Só os essenciais</button><button class="btn btn-amber" data-consent="all">Aceitar todos</button></div>
+</div>
+
+<script>window.PTF={root:"{{ url('') | replace('index.html','') }}",mode:"{{ MODE }}",idx:"{{ url('search-index.json') }}",guide:"{{ url('guia-gratuito') }}"};</script>
+<script src="{{ url('assets/site.js') }}" defer></script>
+</body>
+</html>

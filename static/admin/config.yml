@@ -1,0 +1,132 @@
+# Decap CMS — painel administrativo do Por Trás do Focinho
+# PENDENTE: trocar "SEU-USUARIO/portrasdofocinho" pelo repositório real no GitHub.
+backend:
+  name: github
+  repo: SEU-USUARIO/portrasdofocinho
+  branch: main
+  # Na Cloudflare Pages/Netlify, configure o OAuth do GitHub (instruções no README).
+
+locale: pt
+publish_mode: editorial_workflow   # Rascunho -> Em revisão -> Pronto (fluxo com revisão obrigatória)
+media_folder: static/assets/uploads
+public_folder: /assets/uploads
+site_url: https://portrasdofocinho.com
+display_url: https://portrasdofocinho.com
+
+collections:
+  - name: artigos
+    label: Artigos
+    label_singular: Artigo
+    folder: content/articles
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} — {{category}} — {{date}}"
+    sortable_fields: [date, title, category]
+    view_filters:
+      - {label: Saúde (revisão veterinária), field: category, pattern: saude}
+      - {label: Guias de compra, field: category, pattern: guia-de-compras}
+    fields:
+      - {label: Título, name: title, widget: string}
+      - {label: Título para o Google (opcional, até 60 caracteres), name: seo_title, widget: string, required: false}
+      - {label: Descrição (aparece no Google, 140–160 caracteres), name: description, widget: text}
+      - label: Categoria
+        name: category
+        widget: select
+        options: [comportamento, saude, racas, historias, voce-sabia, vida-com-pets, guia-de-compras, gatos, causa-animal]
+      - label: Formato editorial
+        name: format
+        widget: select
+        required: false
+        options: [focinho-diz, ciencia-2min, historias-ficaram, guia-sem-enrolacao, checklist-tutor, diario-resgate]
+      - {label: Data de publicação (datas futuras ficam agendadas), name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false}
+      - {label: Atualizado em, name: updated, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false, required: false}
+      - {label: Artigo pilar (guia completo do tema), name: pillar, widget: boolean, default: false}
+      - {label: Destaque na home, name: featured, widget: boolean, default: false}
+      - {label: Cluster (tema do grupo de artigos), name: cluster, widget: string, required: false}
+      - {label: Palavras-chave, name: keywords, widget: list, required: false}
+      - {label: Artigos relacionados (slugs), name: related, widget: list, required: false}
+      - {label: Produtos recomendados (IDs do catálogo), name: products, widget: list, required: false}
+      - {label: Revisão veterinária (ex.: "Dra. Nome, CRMV-SP 00000" ou "pendente"), name: vet_review, widget: string, required: false}
+      - {label: Rascunho (não publicar), name: draft, widget: boolean, default: false}
+      - label: Perguntas frequentes
+        name: faq
+        widget: list
+        required: false
+        fields: [{label: Pergunta, name: q, widget: string}, {label: Resposta, name: a, widget: text}]
+      - label: Fontes
+        name: sources
+        widget: list
+        required: false
+        fields: [{label: Nome, name: name, widget: string}, {label: Link, name: url, widget: string, required: false}]
+      - {label: Texto (use [[produtos]], [[video]], [[newsletter]], [[leia:slug]]), name: body, widget: markdown}
+
+  - name: paginas
+    label: Páginas institucionais
+    folder: content/pages
+    create: true
+    fields:
+      - {label: Título, name: title, widget: string}
+      - {label: Descrição, name: description, widget: text, required: false}
+      - {label: Ocultar do Google, name: noindex, widget: boolean, default: false}
+      - {label: Texto, name: body, widget: markdown}
+
+  - name: dados
+    label: Catálogo, vídeos e categorias
+    files:
+      - label: Produtos (afiliados)
+        name: produtos
+        file: data/products.yaml
+        fields:
+          - label: Produtos
+            name: items
+            widget: list
+            fields:
+              - {label: ID, name: id, widget: string}
+              - {label: Nome, name: name, widget: string}
+              - {label: Para quem, name: for, widget: string}
+              - {label: Por que ajuda, name: why, widget: string}
+              - {label: Termo de busca nas lojas, name: search, widget: string}
+      - label: Vídeos do canal
+        name: videos
+        file: data/videos.yaml
+        fields:
+          - label: Vídeos
+            name: items
+            widget: list
+            fields:
+              - {label: Título, name: title, widget: string}
+              - {label: ID do YouTube, name: youtube_id, widget: string, required: false}
+              - {label: Artigo relacionado (slug), name: article, widget: string, required: false}
+      - label: Configurações e integrações
+        name: config
+        file: config.yaml
+        fields:
+          - label: AdSense
+            name: adsense
+            widget: object
+            fields:
+              - {label: ID do cliente (ca-pub-...), name: client_id, widget: string, required: false}
+              - label: Blocos
+                name: slots
+                widget: object
+                fields:
+                  - {label: No artigo, name: in_article, widget: string, required: false}
+                  - {label: Entre cards, name: in_feed, widget: string, required: false}
+                  - {label: Lateral, name: sidebar, widget: string, required: false}
+          - label: Afiliados
+            name: affiliates
+            widget: object
+            fields:
+              - {label: Tag Amazon, name: amazon_tag, widget: string, required: false}
+              - {label: ID Mercado Livre, name: mercadolivre_id, widget: string, required: false}
+              - {label: Petlove, name: petlove_ref, widget: string, required: false}
+              - {label: Cobasi, name: cobasi_ref, widget: string, required: false}
+          - label: Loja e campanha
+            name: store
+            widget: object
+            fields:
+              - {label: URL da loja, name: url, widget: string, required: false}
+              - {label: R$ por camiseta, name: donation_per_item, widget: number}
+              - {label: Nome da campanha, name: campaign_name, widget: string}
+              - {label: Meta, name: campaign_goal, widget: number}
+              - {label: Vendidas, name: campaign_sold, widget: number}

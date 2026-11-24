@@ -1,0 +1,127 @@
+{% macro logo(size=34) -%}
+<svg class="logo-mark" width="{{ size }}" height="{{ size }}" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="31" fill="#F4A62A"/><path d="M13 24 Q32 12 51 24 Q49 44 32 50 Q15 44 13 24 Z" fill="#2A1D1B"/><ellipse cx="24" cy="29" rx="5" ry="3.4" fill="#F4A62A" transform="rotate(-18 24 29)"/><ellipse cx="40" cy="29" rx="5" ry="3.4" fill="#F4A62A" transform="rotate(18 40 29)"/><ellipse cx="27" cy="21" rx="6" ry="2.2" fill="#fff" opacity=".35"/></svg>
+{%- endmacro %}
+
+{% macro cover(a, cls="") -%}
+<img class="cover {{ cls }}" src="{{ url('assets/covers/' ~ a.slug ~ '.svg') }}" alt="Ilustração: {{ 'gato' if a.animal == 'cat' else 'cachorro' }} espiando — {{ a.cat.short }}" width="1200" height="675" loading="lazy" decoding="async">
+{%- endmacro %}
+
+{% macro card(a, size="m") -%}
+<article class="card card-{{ size }}" style="--c:{{ a.cat.color }}">
+  <a class="card-img" href="{{ url(a.path) }}" tabindex="-1" aria-hidden="true">{{ cover(a) }}</a>
+  <div class="card-body">
+    <p class="kicker"><a href="{{ url('categoria/' ~ a.category) }}">{{ a.cat.short }}</a>{% if a.format_obj %}<span class="fmt">{{ a.format_obj.name }}</span>{% endif %}</p>
+    <h3><a href="{{ url(a.path) }}">{{ a.title }}</a></h3>
+    {% if size != "s" %}<p class="dek">{{ a.description }}</p>{% endif %}
+    <p class="meta">{{ a.minutes }} min de leitura</p>
+  </div>
+</article>
+{%- endmacro %}
+
+{% macro card_row(items, size="m") -%}
+<div class="grid grid-{{ size }}">{% for a in items %}{{ card(a, size) }}{% endfor %}</div>
+{%- endmacro %}
+
+{% macro inline_read(a) -%}
+<aside class="inline-read" style="--c:{{ a.cat.color }}"><span>Leia também</span><a href="{{ url(a.path) }}">{{ a.title }}</a></aside>
+{%- endmacro %}
+
+{% macro products(items) -%}
+{% if items %}
+<section class="products" aria-label="Produtos recomendados">
+  <header><h3>Onde encontrar</h3><p>Links de afiliado: se você comprar por eles, o Por Trás do Focinho pode receber uma comissão, sem custo extra para você. Preços e avaliações estão nas lojas. <a href="{{ url('politica-de-afiliados') }}">Como escolhemos</a></p></header>
+  {% for p in items %}
+  <div class="product">
+    <div class="p-txt"><h4>{{ p.name }}</h4><p><b>Para quem:</b> {{ p.for }}</p><p><b>Por que ajuda:</b> {{ p.why }}</p></div>
+    <div class="p-links">{% for name, href in aff_links(p) %}<a class="btn-store" href="{{ href }}" rel="sponsored nofollow noopener" target="_blank" data-aff="{{ p.id }}|{{ name }}">Ver na {{ name }}</a>{% endfor %}</div>
+  </div>
+  {% endfor %}
+</section>
+{% endif %}
+{%- endmacro %}
+
+{% macro video(v) -%}
+{% if v and v.youtube_id %}
+<figure class="video">
+  <button class="yt" data-id="{{ v.youtube_id }}" aria-label="Reproduzir vídeo: {{ v.title }}"><img src="https://i.ytimg.com/vi/{{ v.youtube_id }}/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="play"></span></button>
+  <figcaption>{{ v.title }} · <a href="{{ cfg.social.youtube_subscribe }}" target="_blank" rel="noopener">Inscreva-se no canal</a></figcaption>
+</figure>
+{% else %}
+<aside class="yt-invite">
+  <div><h3>Tem vídeo sobre isso no canal</h3><p>No YouTube do Por Trás do Focinho a gente mostra em imagens o que você acabou de ler. Vídeos curtos, toda semana.</p></div>
+  <a class="btn btn-yt" href="{{ cfg.social.youtube_subscribe }}" target="_blank" rel="noopener">Inscrever-se no canal</a>
+</aside>
+{% endif %}
+{%- endmacro %}
+
+{% macro newsletter(variant="band") -%}
+<section class="nl nl-{{ variant }}" aria-labelledby="nl-{{ variant }}">
+  <div class="nl-copy">
+    <h2 id="nl-{{ variant }}">Guia gratuito: 25 coisas que seu cachorro gostaria que você entendesse</h2>
+    <p>Receba o guia em PDF e, uma vez por semana, os melhores artigos e vídeos do Por Trás do Focinho. Sem spam.</p>
+  </div>
+  <form class="nl-form" data-action="{{ cfg.newsletter.form_action }}" data-field="{{ cfg.newsletter.email_field }}" novalidate>
+    <label class="sr" for="nl-email-{{ variant }}">Seu e-mail</label>
+    <input id="nl-email-{{ variant }}" type="email" name="email" placeholder="seu@email.com" autocomplete="email" required>
+    <button class="btn btn-amber" type="submit">Quero o guia</button>
+    <label class="consent"><input type="checkbox" required> {{ cfg.newsletter.consent_text }} <a href="{{ url('politica-de-privacidade') }}">Privacidade</a></label>
+    <p class="nl-msg" role="status" aria-live="polite"></p>
+  </form>
+</section>
+{%- endmacro %}
+
+{% macro ad(kind) -%}
+{% set cid = cfg.adsense.client_id %}{% set slot = cfg.adsense.slots[kind] %}
+{% if cid and slot %}
+<div class="ad ad-{{ kind }}"><span class="ad-label">Publicidade</span><ins class="adsbygoogle" style="display:block" data-ad-client="{{ cid }}" data-ad-slot="{{ slot }}" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+{% elif MODE == "preview" %}
+<div class="ad ad-{{ kind }} ad-ph" aria-hidden="true"><span class="ad-label">Publicidade</span><div>Espaço AdSense ({{ kind }}) — ativa quando o ID for configurado</div></div>
+{% endif %}
+{%- endmacro %}
+
+{% macro campaign() -%}
+{% set s = cfg.store %}{% set pct = (s.campaign_sold * 100 / s.campaign_goal) | round(1) %}
+<section class="campaign">
+  <h3>{{ s.campaign_name }}</h3>
+  <div class="meter" role="meter" aria-valuemin="0" aria-valuemax="{{ s.campaign_goal }}" aria-valuenow="{{ s.campaign_sold }}" aria-label="Camisetas vendidas"><span style="width:{{ [pct, 1.5] | max }}%"></span></div>
+  <p class="meter-txt"><b>{{ s.campaign_sold }}</b> de {{ s.campaign_goal }} camisetas · R$ {{ s.donation_per_item }} de cada camiseta vão para ações de apoio animal</p>
+  <p class="small">O contador é atualizado a cada venda confirmada. A prestação de contas de cada real destinado fica pública nesta página.</p>
+</section>
+{%- endmacro %}
+
+{% macro store() -%}
+<section class="store">
+  <div class="store-art" aria-hidden="true">
+    <svg viewBox="0 0 300 260"><path d="M70 30 L115 15 Q150 40 185 15 L230 30 L285 85 L245 120 L225 100 L225 245 L75 245 L75 100 L55 120 L15 85 Z" fill="#fff" stroke="#0E3B43" stroke-width="5" stroke-linejoin="round"/><path d="M115 15 Q150 40 185 15" fill="none" stroke="#0E3B43" stroke-width="5"/><g transform="translate(150 150) scale(.9)" fill="#F2557A"><ellipse cx="0" cy="18" rx="24" ry="19"/><circle cx="-26" cy="-8" r="10"/><circle cx="-9" cy="-24" r="10"/><circle cx="10" cy="-24" r="10"/><circle cx="27" cy="-8" r="10"/></g></svg>
+  </div>
+  <div>
+    <h3>Coleção 01 · Amor que Transforma</h3>
+    <p>Camisetas do Patas que Transformam: “Você veste uma ideia. E ajuda a transformar uma vida.” A cada peça solidária, R$ {{ cfg.store.donation_per_item }} vão para ações de apoio animal, com prestação de contas pública.</p>
+    {% if cfg.store.url %}<a class="btn btn-pink" href="{{ cfg.store.url }}" target="_blank" rel="noopener">Ver a coleção na loja</a>
+    {% else %}<p class="soon">A loja abre em breve. Deixe seu e-mail abaixo para saber primeiro.</p>{% endif %}
+  </div>
+</section>
+{%- endmacro %}
+
+{% macro formats() -%}
+<div class="formats">{% for f in FORMATS.values() %}<div class="format"><h4>{{ f.name }}</h4><p>{{ f.desc }}</p></div>{% endfor %}</div>
+{%- endmacro %}
+
+{% macro video_grid() -%}
+<div class="vgrid">{% for v in VIDEOS %}
+  <div class="vcard">{% if v.youtube_id %}<button class="yt" data-id="{{ v.youtube_id }}" aria-label="Reproduzir: {{ v.title }}"><img src="https://i.ytimg.com/vi/{{ v.youtube_id }}/hqdefault.jpg" alt="" loading="lazy"><span class="play"></span></button>{% else %}<a class="vthumb" href="{{ cfg.social.youtube }}" target="_blank" rel="noopener"><span class="play"></span></a>{% endif %}
+  <h4>{{ v.title }}</h4>{% if v.article in BY_SLUG %}<a class="small" href="{{ url(BY_SLUG[v.article].path) }}">Ler o artigo completo</a>{% endif %}</div>
+{% endfor %}</div>
+{%- endmacro %}
+
+{% macro crumbs(items) -%}
+<nav class="crumbs" aria-label="Você está em"><ol>{% for name, href in items %}<li>{% if href %}<a href="{{ href }}">{{ name }}</a>{% else %}<span aria-current="page">{{ name }}</span>{% endif %}</li>{% endfor %}</ol></nav>
+{%- endmacro %}
+
+{% macro share(title, link) -%}
+<div class="share"><span>Compartilhe</span>
+<a href="https://wa.me/?text={{ (title ~ ' ' ~ link) | urlencode }}" target="_blank" rel="noopener" data-share="whatsapp">WhatsApp</a>
+<a href="https://www.facebook.com/sharer/sharer.php?u={{ link | urlencode }}" target="_blank" rel="noopener" data-share="facebook">Facebook</a>
+<a href="https://x.com/intent/post?url={{ link | urlencode }}&text={{ title | urlencode }}" target="_blank" rel="noopener" data-share="x">X</a>
+<button type="button" class="copy" data-link="{{ link }}">Copiar link</button></div>
+{%- endmacro %}

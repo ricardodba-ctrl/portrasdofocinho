@@ -1,0 +1,49 @@
+# ============================================================
+#  Por Trás do Focinho — configuração central do portal
+#  Tudo que depende de conta/credencial fica aqui. Campo vazio = integração desligada.
+# ============================================================
+site:
+  name: "Por Trás do Focinho"
+  tagline: "O que seu pet sente, pensa e precisa — explicado com carinho e ciência."
+  url: "https://portrasdofocinho.com"
+  language: "pt-BR"
+  email: "contato@portrasdofocinho.com"
+  editorial_team: "Redação Por Trás do Focinho"
+
+social:
+  youtube: "https://www.youtube.com/@portrasdofocinho"
+  youtube_subscribe: "https://www.youtube.com/@portrasdofocinho?sub_confirmation=1"
+  instagram: ""   # PENDENTE: @ do Instagram
+  tiktok: ""      # PENDENTE: @ do TikTok
+
+analytics:
+  ga4_id: ""          # ex.: G-XXXXXXXXXX  (Google Analytics 4)
+  gtm_id: ""          # ex.: GTM-XXXXXXX   (opcional; se preencher, use o GA4 dentro do GTM)
+  search_console_verification: ""   # conteúdo da meta google-site-verification
+
+adsense:
+  client_id: ""       # ex.: ca-pub-0000000000000000  — gera ads.txt e ativa os blocos
+  slots:              # IDs dos blocos criados no painel do AdSense
+    in_article: ""
+    in_feed: ""
+    sidebar: ""
+  # Enquanto client_id estiver vazio, a prévia mostra os espaços reservados.
+
+affiliates:
+  amazon_tag: ""          # ex.: portrasdofocinho-20  (Amazon Associados Brasil)
+  mercadolivre_id: ""     # PENDENTE: ID do programa de afiliados Mercado Livre
+  petlove_ref: ""         # PENDENTE: confirmar programa ativo e condições
+  cobasi_ref: ""          # PENDENTE: confirmar programa ativo e condições
+
+newsletter:
+  # Brevo, MailerLite ou ConvertKit: cole aqui a URL de envio do formulário (action)
+  form_action: ""
+  email_field: "EMAIL"
+  consent_text: "Quero receber o guia e a newsletter do Por Trás do Focinho. Posso cancelar quando quiser, com um clique."
+
+store:
+  url: ""                     # PENDENTE: URL da loja Nuvemshop (Patas que Transformam)
+  donation_per_item: 7        # R$ destinados por camiseta solidária (configurável)
+  campaign_name: "Primeira Missão: 100 camisetas, um propósito"
+  campaign_goal: 100
+  campaign_sold: 0            # atualizar manualmente ou via integração

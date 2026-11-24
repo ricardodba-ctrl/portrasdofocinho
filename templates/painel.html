@@ -1,0 +1,256 @@
+{% extends "base.html" %}
+{% block main %}
+<header class="page-head">
+  <div class="page-head-in">
+    <h1>Painel do Por Trás do Focinho</h1>
+    <p>Uso interno (fora do Google). Projeção de receita, métricas do mês, fluxo editorial com IA, pendências e plano de 30 dias. Para criar e editar artigos, use a <a href="{{ url('admin/index.html') }}" style="color:var(--amber)">área de administração</a>.</p>
+  </div>
+</header>
+<nav class="pn-nav scroll" aria-label="Seções do painel"><a href="#projecao">Projeção</a><a href="#metricas">Métricas do mês</a><a href="#ia">Fluxo editorial com IA</a><a href="#clusters">Clusters</a><a href="#pendencias">Pendências</a><a href="#plano">Plano de 30 dias</a></nav>
+
+<section class="band" id="projecao">
+  <div class="sec-head"><h2>Projeção de receita mensal</h2><p>Estimativas para planejar, não promessas. Todas as premissas são editáveis; troque pelos seus números assim que houver dados reais.</p></div>
+  <div class="pn-grid">
+    <form class="pn-form" id="prem" onsubmit="return false">
+      <fieldset><legend>Cenário</legend>
+        <div class="seg" role="radiogroup">{% for k, n in [("c","Conservador"),("b","Base"),("o","Otimista")] %}<label><input type="radio" name="sc" value="{{ k }}" {{ 'checked' if k == 'b' }}> {{ n }}</label>{% endfor %}</div>
+      </fieldset>
+      <fieldset><legend>Tráfego</legend>
+        <label>Páginas por visita <input type="number" step="0.1" id="ppv"></label></fieldset>
+      <fieldset><legend>AdSense</legend>
+        <label>RPM de página (R$ por mil páginas) <input type="number" step="0.5" id="rpm"></label></fieldset>
+      <fieldset><legend>Afiliados</legend>
+        <label>Visitas em conteúdo de compra (%) <input type="number" step="1" id="buy"></label>
+        <label>Cliques no link de loja (%) <input type="number" step="0.5" id="ctr"></label>
+        <label>Conversão na loja (%) <input type="number" step="0.5" id="cvr"></label>
+        <label>Ticket médio (R$) <input type="number" step="5" id="tkt"></label>
+        <label>Comissão média (%) <input type="number" step="0.5" id="com"></label></fieldset>
+      <fieldset><legend>Loja Patas que Transformam</legend>
+        <label>Visitas que vão à loja (%) <input type="number" step="0.1" id="sto"></label>
+        <label>Conversão da loja (%) <input type="number" step="0.1" id="scv"></label>
+        <label>Margem por camiseta, antes da doação (R$) <input type="number" step="1" id="mrg"></label></fieldset>
+      <fieldset><legend>Patrocínio</legend>
+        <label>Valor de uma publi a cada 50 mil visitas (R$) <input type="number" step="50" id="spo"></label></fieldset>
+      <fieldset><legend>Lista de e-mails</legend>
+        <label>Visitantes que se cadastram (%) <input type="number" step="0.1" id="nl"></label></fieldset>
+    </form>
+    <div>
+      <div class="scroll"><table class="pn-table" id="proj"></table></div>
+      <div class="pn-note">
+        <p><b>Como ler:</b> AdSense só entra após aprovação (o site precisa de conteúdo original, páginas de política e algum tráfego). Patrocínio começa a partir de 50 mil visitas/mês, com 1 publi por mês (2 a partir de 300 mil). A doação de R$ {{ cfg.store.donation_per_item }} por camiseta já foi descontada da margem.</p>
+        <p><b>De onde vêm as premissas:</b> fontes de mercado indicam RPM de AdSense no Brasil entre cerca de R$ 2 e R$ 50 por mil páginas, conforme o nicho; o cenário base usa R$ 12. Comissões de afiliados variam por loja e categoria: confira as tabelas oficiais de cada programa antes de decidir.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band-tint" id="metricas">
+  <div class="sec-head"><h2>Métricas do mês</h2><p>Lance os números de cada mês (GA4, Search Console, AdSense, painéis de afiliados e loja). O painel calcula RPM, receita por visita e crescimento. Os dados ficam só neste navegador; use “Copiar dados” para guardar.</p></div>
+  <form class="pn-month" id="mform" onsubmit="return false">
+    <label>Mês <input type="month" id="m-mes" required></label>
+    <label>Visitas <input type="number" id="m-vis" min="0"></label>
+    <label>Páginas vistas <input type="number" id="m-pv" min="0"></label>
+    <label>% Google orgânico <input type="number" id="m-org" min="0" max="100"></label>
+    <label>Novos e-mails <input type="number" id="m-lead" min="0"></label>
+    <label>Cliques em afiliados <input type="number" id="m-clk" min="0"></label>
+    <label>Receita AdSense (R$) <input type="number" id="m-ads" min="0" step="0.01"></label>
+    <label>Receita afiliados (R$) <input type="number" id="m-aff" min="0" step="0.01"></label>
+    <label>Receita loja (R$) <input type="number" id="m-shop" min="0" step="0.01"></label>
+    <label>Patrocínios (R$) <input type="number" id="m-spo" min="0" step="0.01"></label>
+    <div class="pn-actions"><button class="btn btn-amber" id="m-save">Salvar mês</button><button class="btn btn-ghost" type="button" id="m-copy">Copiar dados</button><span id="m-msg" role="status"></span></div>
+  </form>
+  <div class="scroll"><table class="pn-table" id="mtab"></table></div>
+  <details class="pn-ga"><summary>Eventos que o site já envia ao GA4</summary>
+    <ul><li><code>affiliate_click</code> (produto e loja) · <code>generate_lead</code> (cadastro na newsletter) · <code>article_complete</code> (leu até o fim) · <code>share</code> · <code>search</code> · <code>video_start</code></li>
+    <li>No GA4, marque <code>generate_lead</code> e <code>affiliate_click</code> como eventos principais (conversões) e crie um relatório por página de destino.</li></ul></details>
+</section>
+
+<section class="band" id="ia">
+  <div class="sec-head"><h2>Fluxo editorial com IA</h2><p>A IA ajuda a pesquisar e rascunhar; nada é publicado sem revisão humana. Preencha o briefing e copie o pedido pronto para o Claude.</p></div>
+  <div class="pn-grid">
+    <form class="pn-form" id="brief" onsubmit="return false">
+      <label>Pergunta que o leitor faz no Google <input id="b-q" placeholder="Ex.: por que meu cachorro come grama"></label>
+      <label>Palavra-chave principal <input id="b-kw" placeholder="Ex.: cachorro come grama"></label>
+      <label>Categoria <select id="b-cat">{% for c in cats %}<option value="{{ c.slug }}">{{ c.name }}</option>{% endfor %}</select></label>
+      <label>Intenção <select id="b-int"><option value="descoberta">Descoberta (curiosidade)</option><option value="informativa">Informativa (resolver dúvida)</option><option value="decisao">Decisão de compra</option></select></label>
+      <label>Artigo pilar do cluster <select id="b-pil"><option value="">Nenhum</option>{% for a in articles if a.pillar %}<option value="{{ a.slug }}">{{ a.title }}</option>{% endfor %}</select></label>
+      <label>Vídeo do canal relacionado (título) <input id="b-vid" placeholder="Opcional"></label>
+    </form>
+    <div>
+      <ol class="pn-steps">
+        <li>Ideia e palavra-chave (Search Console, “As pessoas também perguntam”, comentários do canal)</li>
+        <li>Briefing ao lado e rascunho com IA</li>
+        <li>Checagem de fatos: cada afirmação técnica com fonte confiável</li>
+        <li>Revisão veterinária para saúde e comportamento clínico</li>
+        <li>Edição humana: voz da marca, exemplos reais, nada de enrolação</li>
+        <li>SEO: título até 60 caracteres, descrição de 140 a 160, links internos para o pilar e 2 irmãos</li>
+        <li>Capa gerada automaticamente; foto real só com licença</li>
+        <li>Publicação pelo painel de administração, com data agendada</li>
+        <li>Corte para Short/Reels apontando para o artigo</li>
+      </ol>
+      <pre class="pn-out" id="b-out" aria-live="polite"></pre>
+      <button class="btn btn-amber" type="button" id="b-copy">Copiar pedido para a IA</button> <span id="b-msg" role="status"></span>
+    </div>
+  </div>
+</section>
+
+<section class="band band-tint" id="clusters">
+  <div class="sec-head"><h2>Clusters de conteúdo</h2><p>Cada tema tem um artigo pilar e de 5 a 15 artigos complementares. Os publicados aparecem com link; os demais são a fila de produção.</p></div>
+  <div class="pn-clusters">
+  {% set plan = {
+    "Comportamento canino": ["comportamento-do-cachorro-guia-completo", "por-que-meu-cachorro-me-segue-pela-casa", "por-que-o-cachorro-lambe-as-maos", "ansiedade-de-separacao-em-caes", "por-que-o-cachorro-gira-antes-de-deitar", "Por que meu cachorro olha fixamente para mim?", "Por que ele esconde brinquedos?", "Por que ele late para algumas pessoas?", "Por que o cachorro come grama?", "Zoomies: por que o cachorro corre como louco?"],
+    "Saúde preventiva": ["alimentos-proibidos-para-caes", "sinais-de-alerta-levar-cachorro-ao-veterinario", "quantas-horas-um-cachorro-dorme", "Vacinas do cachorro: calendário explicado", "Vermífugo: com que frequência?", "Como escovar os dentes do cachorro", "Calor: como proteger seu cão"],
+    "Escolher e adotar": ["racas-de-cachorro-para-apartamento", "racas-mais-inteligentes", "adocao-responsavel", "Raças para famílias com crianças", "Adotar filhote ou adulto?", "Quanto custa ter um cachorro por mês"],
+    "Primeiros meses": ["como-preparar-a-casa-para-um-filhote", "cachorro-e-crianca-convivencia-segura", "Como ensinar o filhote a fazer xixi no lugar", "Socialização do filhote: o guia"],
+    "Gatos": ["por-que-os-gatos-ronronam", "piscada-lenta-gato", "Por que o gato traz 'presentes'?", "Caixa de areia: o guia completo", "Por que o gato derruba coisas da mesa?"],
+    "Compras": ["como-escolher-cama-para-cachorro", "brinquedos-para-cachorro-que-fica-sozinho", "Caixa de transporte: como escolher", "Arranhadores: o que considerar", "Comedouro lento: para quem vale a pena"]
+  } %}
+  {% for name, items in plan.items() %}
+    <div class="pn-cl"><h3>{{ name }}</h3><ul>{% for it in items %}{% if it in BY_SLUG %}<li class="done"><a href="{{ url(BY_SLUG[it].path) }}">{{ BY_SLUG[it].title }}</a>{% if BY_SLUG[it].pillar %} <b>pilar</b>{% endif %}</li>{% else %}<li>{{ it }}</li>{% endif %}{% endfor %}</ul></div>
+  {% endfor %}
+  </div>
+</section>
+
+<section class="band" id="pendencias">
+  <div class="sec-head"><h2>O que depende de você</h2><p>Itens que exigem conta, pagamento, credencial ou decisão sua. O site já está preparado para cada um: basta preencher o campo indicado em <code>config.yaml</code> (ou em Administração → Configurações).</p></div>
+  <div class="scroll"><table class="pn-table stack">
+    <thead><tr><th>Item</th><th>O que fazer</th><th>Onde entra</th><th>Prioridade</th></tr></thead>
+    <tbody>
+    <tr><td>Domínio</td><td>Registrar portrasdofocinho.com no registro.br (verificar disponibilidade)</td><td>site.url</td><td>Alta</td></tr>
+    <tr><td>Hospedagem</td><td>Conta gratuita na Cloudflare Pages ou Netlify + repositório no GitHub</td><td>README, seção Publicar</td><td>Alta</td></tr>
+    <tr><td>Administração</td><td>Conectar o login do GitHub ao painel (OAuth)</td><td>admin/config.yml</td><td>Alta</td></tr>
+    <tr><td>Google Search Console</td><td>Verificar o domínio e enviar o sitemap.xml</td><td>analytics.search_console_verification</td><td>Alta</td></tr>
+    <tr><td>Google Analytics 4</td><td>Criar a propriedade e copiar o ID G-…</td><td>analytics.ga4_id</td><td>Alta</td></tr>
+    <tr><td>E-mail e newsletter</td><td>Criar conta Brevo ou MailerLite, formulário com dupla confirmação e envio do guia em PDF</td><td>newsletter.form_action</td><td>Alta</td></tr>
+    <tr><td>Revisão veterinária</td><td>Revisar os artigos de saúde e comportamento clínico e assinar com nome e CRMV</td><td>campo vet_review de cada artigo</td><td>Alta</td></tr>
+    <tr><td>Amazon Associados</td><td>Cadastro no programa e tag de afiliado</td><td>affiliates.amazon_tag</td><td>Média</td></tr>
+    <tr><td>Mercado Livre, Petlove, Cobasi</td><td>Confirmar programas ativos e condições; trocar links de busca por links rastreáveis</td><td>affiliates e data/products.yaml</td><td>Média</td></tr>
+    <tr><td>Loja Nuvemshop</td><td>Publicar a Coleção 01 e informar a URL</td><td>store.url</td><td>Média</td></tr>
+    <tr><td>Vídeos do canal</td><td>Informar os IDs dos vídeos já publicados e ligar cada um a um artigo</td><td>data/videos.yaml</td><td>Média</td></tr>
+    <tr><td>Redes sociais</td><td>Informar Instagram e TikTok</td><td>social</td><td>Média</td></tr>
+    <tr><td>Logo oficial</td><td>Enviar o logo do canal em SVG ou PNG para substituir o provisório</td><td>static/assets</td><td>Média</td></tr>
+    <tr><td>Imagem de compartilhamento</td><td>Gerar og-default.png (1200×630) e logo.png</td><td>static/assets</td><td>Média</td></tr>
+    <tr><td>Google AdSense</td><td>Solicitar após 30 a 40 artigos e algumas semanas de tráfego; criar os 3 blocos</td><td>adsense.client_id e slots</td><td>Depois</td></tr>
+    <tr><td>Dados de contato da empresa</td><td>Definir razão social/CNPJ responsável pelo site para as políticas</td><td>páginas de política</td><td>Média</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="band band-tint" id="plano">
+  <div class="sec-head"><h2>Plano de 30 dias</h2><p>Meta do primeiro mês: site no ar e indexado, 40 artigos publicados, primeiros leitores vindos do Google e do canal, lista de e-mails começando.</p></div>
+  <div class="pn-weeks">
+    <div><h3>Semana 1 · No ar</h3><ul><li>Domínio, hospedagem e deploy</li><li>Search Console + sitemap; GA4 com consentimento</li><li>Newsletter conectada; guia em PDF</li><li>Revisão veterinária dos artigos de saúde</li><li>Link do blog na bio e nas descrições de todos os vídeos</li></ul></div>
+    <div><h3>Semana 2 · Clusters</h3><ul><li>+6 artigos de comportamento (fechar o cluster)</li><li>+2 de saúde preventiva</li><li>Cada Short novo aponta para um artigo</li><li>Pedir indexação das páginas novas</li></ul></div>
+    <div><h3>Semana 3 · Comércio</h3><ul><li>Cadastro e links reais de afiliados</li><li>+4 artigos: gatos e guias de compra</li><li>Página da loja com a Coleção 01</li><li>Primeiro e-mail semanal para a lista</li></ul></div>
+    <div><h3>Semana 4 · Medir e ajustar</h3><ul><li>+6 artigos a partir das consultas do Search Console</li><li>Melhorar títulos com muita impressão e pouco clique</li><li>Primeira edição do Diário do resgate com uma ONG parceira</li><li>Lançar o mês no painel de métricas</li></ul></div>
+  </div>
+</section>
+
+<style>
+.pn-nav{display:flex;gap:6px;padding:10px max(5vw,16px);background:var(--tint);position:sticky;top:64px;z-index:5}
+.pn-nav a{flex:none;padding:8px 14px;border-radius:999px;background:var(--bg);text-decoration:none;font-weight:700;font-size:15px}
+.scroll{overflow-x:auto}
+.pn-grid{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:28px;align-items:start}
+@media(max-width:900px){.pn-grid{grid-template-columns:1fr}}
+.pn-form{display:grid;gap:12px}
+.pn-form fieldset{border:0;padding:0;margin:0;display:grid;gap:8px}
+.pn-form legend{font:700 17px var(--serif);margin-bottom:6px}
+.pn-form label,.pn-month label{display:grid;gap:4px;font-size:15px}
+.pn-form input,.pn-form select,.pn-month input{min-height:44px;border:2px solid var(--line);border-radius:10px;padding:0 12px;font:16px var(--sans);background:var(--bg);color:var(--ink)}
+.seg{display:flex;flex-wrap:wrap;gap:6px}.seg label{display:flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;background:var(--tint);cursor:pointer}
+.pn-table{width:100%;border-collapse:collapse;font-size:15px}
+.pn-table th,.pn-table td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.pn-table td.n,.pn-table th.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.pn-table tr.tot td{font-weight:700;background:var(--tint)}
+.pn-table thead th{background:var(--tint)}
+.pn-note{font-size:15px;color:var(--mute);margin-top:14px}
+.pn-month{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,180px),1fr));gap:12px;margin-bottom:20px}
+.pn-actions{grid-column:1/-1;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.pn-ga{margin-top:16px;font-size:15px}
+.pn-steps{display:grid;gap:6px;padding-left:22px;font-size:15px;margin:0 0 16px}
+.pn-out{white-space:pre-wrap;background:var(--tint);border-radius:var(--r);padding:16px;font:14px/1.5 ui-monospace,Consolas,monospace;max-height:380px;overflow:auto}
+.pn-clusters{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:20px}
+.pn-cl{background:var(--bg);border-radius:var(--r);padding:18px}
+.pn-cl ul{padding-left:18px;margin:0;font-size:15px;display:grid;gap:6px}.pn-cl li{color:var(--mute)}
+.pn-cl li.done{color:var(--ink)}.pn-cl li.done b{font-size:12px;background:var(--amber);color:#2A1D1B;border-radius:6px;padding:1px 6px}
+.pn-weeks{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:18px}
+.pn-weeks>div{background:var(--bg);border-radius:var(--r);padding:18px;border-top:5px solid var(--teal2)}
+.pn-weeks ul{padding-left:18px;margin:0;font-size:15px;display:grid;gap:6px}
+@media(max-width:600px){.stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--line)}.stack td{display:flow-root;border:0;padding:3px 0 3px 7.5em}.stack td::before{content:attr(data-l);float:left;width:7em;margin-left:-7.5em;font-weight:700}}
+</style>
+<script>
+{
+const $=s=>document.querySelector(s);
+for(const c of document.querySelectorAll('.stack td')){let i=0,p=c;while(p=p.previousElementSibling)i++;c.dataset.l=c.closest('table').rows[0].cells[i].textContent}
+const brl=v=>'R$ '+Math.round(v).toLocaleString('pt-BR');
+const num=v=>Math.round(v).toLocaleString('pt-BR');
+const SC={c:{ppv:1.3,rpm:6,buy:12,ctr:5,cvr:3,tkt:110,com:5,sto:0.3,scv:1,mrg:30,spo:250,nl:1},
+          b:{ppv:1.5,rpm:12,buy:15,ctr:8,cvr:4,tkt:130,com:6,sto:0.5,scv:1.5,mrg:35,spo:400,nl:1.5},
+          o:{ppv:1.8,rpm:20,buy:20,ctr:10,cvr:5,tkt:150,com:7,sto:0.8,scv:2,mrg:40,spo:600,nl:2.5}};
+const DON={{ cfg.store.donation_per_item }};
+const V=[10000,50000,100000,300000,500000,1000000];
+const ids=Object.keys(SC.b);
+function setSc(k){ids.forEach(i=>$('#'+i).value=SC[k][i]);calc()}
+function calc(){
+  const p={};ids.forEach(i=>p[i]=parseFloat($('#'+i).value)||0);
+  const rows=V.map(v=>{
+    const pv=v*p.ppv, ads=pv/1000*p.rpm, aff=v*p.buy/100*p.ctr/100*p.cvr/100*p.tkt*p.com/100;
+    const shirts=v*p.sto/100*p.scv/100, shop=shirts*(p.mrg-DON), don=shirts*DON;
+    const spo=v>=300000?2*p.spo*v/50000:(v>=50000?p.spo*v/50000:0);
+    return {v,pv,ads,aff,shop,don,spo,tot:ads+aff+shop+spo,leads:v*p.nl/100,shirts}});
+  const h='<thead><tr><th>Visitas/mês</th>'+rows.map(r=>'<th class="n">'+num(r.v)+'</th>').join('')+'</tr></thead>';
+  const line=(n,k,f=brl)=>'<tr><td>'+n+'</td>'+rows.map(r=>'<td class="n">'+f(r[k])+'</td>').join('')+'</tr>';
+  $('#proj').innerHTML=h+'<tbody>'+line('Páginas vistas','pv',num)+line('AdSense','ads')+line('Afiliados','aff')+line('Loja (margem após doação)','shop')+line('Patrocínios','spo')
+   +'<tr class="tot"><td>Total estimado</td>'+rows.map(r=>'<td class="n">'+brl(r.tot)+'</td>').join('')+'</tr>'
+   +line('Camisetas vendidas','shirts',num)+line('Doado ao Patas que Transformam','don')+line('Novos e-mails na lista','leads',num)+'</tbody>';
+}
+document.querySelectorAll('[name=sc]').forEach(r=>r.addEventListener('change',()=>setSc(r.value)));
+ids.forEach(i=>$('#'+i).addEventListener('input',calc));
+setSc('b');
+
+/* métricas mensais */
+const KEY='ptf-metricas';let data=[];
+try{data=JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){data=[]}
+const F=['mes','vis','pv','org','lead','clk','ads','aff','shop','spo'];
+function drawM(){
+  data.sort((a,b)=>a.mes<b.mes?-1:1);
+  if(!data.length){$('#mtab').innerHTML='<tbody><tr><td>Nenhum mês lançado ainda. Preencha o formulário acima ao fim do primeiro mês.</td></tr></tbody>';return}
+  $('#mtab').innerHTML='<thead><tr><th>Mês</th><th class="n">Visitas</th><th class="n">Cresc.</th><th class="n">% orgânico</th><th class="n">E-mails</th><th class="n">Conv. e-mail</th><th class="n">Cliques afil.</th><th class="n">RPM AdSense</th><th class="n">Receita total</th><th class="n">R$/mil visitas</th><th></th></tr></thead><tbody>'+
+  data.map((d,i)=>{const prev=data[i-1],tot=(+d.ads||0)+(+d.aff||0)+(+d.shop||0)+(+d.spo||0);
+   const g=prev&&+prev.vis?((d.vis-prev.vis)/prev.vis*100).toFixed(0)+'%':'—';
+   return '<tr><td>'+d.mes+'</td><td class="n">'+num(+d.vis||0)+'</td><td class="n">'+g+'</td><td class="n">'+(d.org||'—')+'%</td><td class="n">'+num(+d.lead||0)+'</td><td class="n">'+(+d.vis?(d.lead/d.vis*100).toFixed(2)+'%':'—')+'</td><td class="n">'+num(+d.clk||0)+'</td><td class="n">'+(+d.pv?'R$ '+(d.ads/d.pv*1000).toFixed(2):'—')+'</td><td class="n">'+brl(tot)+'</td><td class="n">'+(+d.vis?'R$ '+(tot/d.vis*1000).toFixed(2):'—')+'</td><td><button class="linkish" data-del="'+i+'">Remover</button></td></tr>'}).join('')+'</tbody>';
+  document.querySelectorAll('[data-del]').forEach(b=>b.addEventListener('click',()=>{data.splice(+b.dataset.del,1);save();drawM()}));
+}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(data))}catch(e){}}
+$('#m-save').addEventListener('click',()=>{
+  const d={};F.forEach(f=>d[f]=$('#m-'+f).value);
+  if(!d.mes){$('#m-msg').textContent='Escolha o mês.';return}
+  data=data.filter(x=>x.mes!==d.mes);data.push(d);save();drawM();$('#m-msg').textContent='Mês salvo.'});
+$('#m-copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(JSON.stringify(data,null,1));$('#m-msg').textContent='Dados copiados.'}catch(e){$('#m-msg').textContent='Não foi possível copiar neste navegador.'}});
+drawM();
+
+/* briefing para IA */
+const CATS={ {% for c in cats %}"{{ c.slug }}":"{{ c.name }}",{% endfor %} };
+const INT={descoberta:'despertar curiosidade e ser compartilhável',informativa:'resolver a dúvida de forma completa e prática',decisao:'ajudar a escolher um produto pelo que importa para o pet, sem inventar preços, notas, testes ou experiências'};
+function brief(){
+  const q=$('#b-q').value||'[pergunta do leitor]',kw=$('#b-kw').value||'[palavra-chave]',cat=CATS[$('#b-cat').value],it=$('#b-int').value,pil=$('#b-pil').selectedOptions[0].text,vid=$('#b-vid').value;
+  $('#b-out').textContent=`Você é redator do portal Por Trás do Focinho (cães e gatos, português do Brasil).
+Escreva um rascunho de artigo respondendo: "${q}".
+
+Palavra-chave principal: ${kw}
+Categoria: ${cat}
+Objetivo: ${INT[it]}.
+${$('#b-pil').value?'Linkar para o artigo pilar: '+pil+'\n':''}${vid?'Vídeo relacionado do canal: '+vid+' (sugerir onde incorporar)\n':''}
+Regras:
+- Responda a pergunta nas 2 primeiras frases (para trecho em destaque no Google).
+- 900 a 1.400 palavras, H2 em forma de pergunta quando fizer sentido, parágrafos curtos.
+- Toda afirmação técnica precisa de fonte confiável (estudo, associação veterinária, universidade). Liste as fontes no fim com link. Se não houver fonte, não afirme.
+- Saúde: nunca indique dose, medicamento ou diagnóstico; oriente a procurar o veterinário e inclua uma caixa "Quando procurar o veterinário".
+- Nada de avaliações, preços, testes ou histórias pessoais inventadas.
+- Tom: caloroso, curioso, direto. Sem sensacionalismo nem clickbait.
+- Entregue também: título (até 60 caracteres), descrição (140–160), 3 perguntas frequentes com respostas curtas, 3 ideias de links internos e 1 ideia de Short de 30 segundos que leve ao artigo.
+- Formato: Markdown com front matter YAML (title, description, category, keywords, faq, sources).`}
+document.querySelectorAll('#brief input,#brief select').forEach(e=>e.addEventListener('input',brief));brief();
+$('#b-copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText($('#b-out').textContent);$('#b-msg').textContent='Copiado.'}catch(e){$('#b-msg').textContent='Selecione o texto e copie manualmente.'}});
+}
+</script>
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block bodyclass %}home{% endblock %}
+{% block schema %}
+<script type="application/ld+json">{{ json({"@context":"https://schema.org","@graph":[
+ {"@type":"Organization","@id":abs_url('')~"#org","name":cfg.site.name,"url":abs_url(''),"logo":abs_url('assets/logo.png'),"sameAs":[cfg.social.youtube]},
+ {"@type":"WebSite","@id":abs_url('')~"#site","name":cfg.site.name,"url":abs_url(''),"inLanguage":"pt-BR","publisher":{"@id":abs_url('')~"#org"},
+  "potentialAction":{"@type":"SearchAction","target":abs_url('busca')~"?q={search_term_string}","query-input":"required name=search_term_string"}}]}) }}</script>
+{% endblock %}
+{% block main %}
+{% set lead = articles | selectattr("featured") | first or articles[0] %}
+{% set pillars = articles | selectattr("pillar") | rejectattr("slug", "equalto", lead.slug) | list %}
+{% set latest = articles | rejectattr("slug", "equalto", lead.slug) | list %}
+<section class="hero" style="--c:{{ lead.cat.color }}">
+  <div class="hero-in">
+    <div class="hero-txt">
+      <p class="kicker light"><a href="{{ url('categoria/' ~ lead.category) }}">{{ lead.cat.short }}</a>{% if lead.format_obj %}<span class="fmt">{{ lead.format_obj.name }}</span>{% endif %}</p>
+      <h1><a href="{{ url(lead.path) }}">{{ lead.title }}</a></h1>
+      <p class="hero-dek">{{ lead.description }}</p>
+      <a class="btn btn-amber" href="{{ url(lead.path) }}">Ler o guia completo</a>
+    </div>
+    <a class="hero-art" href="{{ url(lead.path) }}" tabindex="-1" aria-hidden="true"><img src="{{ url('assets/covers/home.svg') }}" alt="" width="1600" height="900"></a>
+  </div>
+  <form class="hero-search" role="search" onsubmit="return false">
+    <label for="hs">O que seu pet está fazendo que você quer entender?</label>
+    <div><input id="hs" type="search" placeholder="Ex.: por que meu cachorro me segue" data-open-search><button class="btn btn-pink" type="button" data-open-search>Buscar</button></div>
+  </form>
+</section>
+
+<section class="band">
+  <div class="sec-head"><h2>Comece por aqui</h2><p>Os guias completos que respondem às dúvidas mais comuns de quem convive com cães e gatos.</p></div>
+  {{ m.card_row(pillars[:3], "l") }}
+</section>
+
+<section class="band band-tint">
+  <div class="sec-head"><h2>Últimos artigos</h2></div>
+  {{ m.card_row(latest[:8], "s") }}
+</section>
+
+{{ m.ad("in_feed") }}
+
+{% for slug in ["comportamento", "voce-sabia", "saude", "historias", "gatos"] %}
+{% set c = CAT[slug] %}{% set items = articles | selectattr("category", "equalto", slug) | list %}
+{% if items %}
+<section class="band cat-band" style="--c:{{ c.color }}">
+  <div class="sec-head"><h2><a href="{{ url('categoria/' ~ slug) }}">{{ c.name }}</a></h2><p>{{ c.desc }}</p><a class="more" href="{{ url('categoria/' ~ slug) }}">Ver tudo de {{ c.short }}</a></div>
+  {{ m.card_row(items[:4], "m") }}
+</section>
+{% endif %}
+{% endfor %}
+
+<section class="band buy" style="--c:{{ CAT['guia-de-compras'].color }}">
+  <div class="sec-head"><h2>Guias de compra sem enrolação</h2><p>Como escolher pelo que importa para o seu pet. Sem notas inventadas e sem “top 10” de propaganda.</p></div>
+  {{ m.card_row(articles | selectattr("category", "equalto", "guia-de-compras") | list, "m") }}
+  <div class="picks">
+    <h3>Recomendações do momento</h3>
+    <ul>{% for p in PRODUCTS.values() | list %}{% if loop.index <= 6 %}<li><b>{{ p.name }}</b><span>{{ p.for }}</span><a href="{{ aff_links(p)[0][1] }}" rel="sponsored nofollow noopener" target="_blank" data-aff="{{ p.id }}|Amazon">Ver opções</a></li>{% endif %}{% endfor %}</ul>
+    <p class="small">Links de afiliado. <a href="{{ url('politica-de-afiliados') }}">Entenda</a>.</p>
+  </div>
+</section>
+
+<section class="band videos">
+  <div class="sec-head"><h2>Assista aos vídeos mais recentes</h2><p>O que você lê aqui, você vê no canal. Vídeos e Shorts toda semana.</p><a class="btn btn-yt" href="{{ cfg.social.youtube_subscribe }}" target="_blank" rel="noopener">Inscrever-se no canal</a></div>
+  {{ m.video_grid() }}
+</section>
+
+<section class="band patas">
+  <div class="patas-in">
+    <div>
+      <h2>Patas que Transformam</h2>
+      <p class="lead">O braço social do Por Trás do Focinho. Parte da receita de produtos solidários vai para ações de apoio animal, com prestação de contas pública de cada real.</p>
+      {{ m.campaign() }}
+      <a class="btn btn-pink" href="{{ url('patas-que-transformam') }}">Conhecer o projeto</a>
+    </div>
+    {{ m.store() }}
+  </div>
+</section>
+
+<section class="band">{{ m.newsletter("band") }}</section>
+
+<section class="band band-tint">
+  <div class="sec-head"><h2>Histórias que você não pode perder</h2><p>Histórias reais, documentadas e com fonte. E a sua pode ser a próxima: <a href="{{ url('envie-sua-historia') }}">envie a sua</a>.</p></div>
+  {{ m.card_row(articles | selectattr("category", "equalto", "historias") | list, "m") }}
+</section>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block schema %}
+<script type="application/ld+json">{{ json({"@context":"https://schema.org","@graph":[
+ {"@type":"CollectionPage","name":c.name,"description":c.desc,"url":abs_url('categoria/' ~ c.slug),"inLanguage":"pt-BR"},
+ {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":abs_url('')},{"@type":"ListItem","position":2,"name":c.name,"item":abs_url('categoria/' ~ c.slug)}]}]}) }}</script>
+{% endblock %}
+{% block main %}
+<header class="cat-head" style="--c:{{ c.color }}">
+  <img class="cat-art" src="{{ url('assets/covers/cat-' ~ c.slug ~ '.svg') }}" alt="" width="1600" height="600">
+  <div class="cat-head-in">
+    {{ m.crumbs([("Início", url('')), (c.name, None)]) }}
+    <h1>{{ c.name }}</h1>
+    <p>{{ c.desc }}</p>
+  </div>
+</header>
+<section class="band">
+  {% if items %}
+    {% set pillar = items | selectattr("pillar") | first %}
+    {% if pillar %}<div class="pillar-feature">{{ m.card(pillar, "l") }}</div>{% endif %}
+    {% set rest = items | rejectattr("pillar") | list %}
+    <div class="grid grid-m">
+    {% for a in rest %}{{ m.card(a, "m") }}{% if loop.index == 6 %}</div>{{ m.ad("in_feed") }}<div class="grid grid-m">{% endif %}{% endfor %}
+    </div>
+  {% else %}
+    <div class="empty"><h2>Os primeiros artigos desta seção estão sendo escritos</h2><p>Enquanto isso, comece pelos guias mais lidos ou receba os novos artigos por e-mail.</p><a class="btn btn-amber" href="{{ url('') }}">Ir para a página inicial</a></div>
+  {% endif %}
+</section>
+{% if c.slug == "guia-de-compras" %}<section class="band band-tint">{{ m.products(PRODUCTS.values() | list) }}</section>{% endif %}
+<section class="band band-tint">{{ m.newsletter("band") }}</section>
+{% endblock %}

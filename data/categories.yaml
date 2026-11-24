@@ -1,0 +1,54 @@
+- slug: comportamento
+  name: Comportamento e psicologia
+  short: Comportamento
+  desc: Por que seu cachorro faz o que faz — e como entender o que ele está sentindo.
+  color: "#0E3B43"
+  animal: dog
+- slug: saude
+  name: Saúde e cuidados
+  short: Saúde
+  desc: Prevenção, cuidados do dia a dia e os sinais que pedem uma visita ao veterinário.
+  color: "#1F6F78"
+  animal: dog
+- slug: racas
+  name: Raças e curiosidades
+  short: Raças
+  desc: Como escolher a raça certa para sua rotina, e o que a ciência diz sobre cada uma.
+  color: "#B86E12"
+  animal: dog
+- slug: historias
+  name: Histórias reais
+  short: Histórias
+  desc: Histórias verdadeiras e documentadas de animais que marcaram a vida de pessoas.
+  color: "#8A2E4B"
+  animal: dog
+- slug: voce-sabia
+  name: Você sabia?
+  short: Você sabia?
+  desc: Descobertas científicas sobre pets explicadas em poucos minutos.
+  color: "#D94A6E"
+  animal: cat
+- slug: vida-com-pets
+  name: Vida com pets
+  short: Vida com pets
+  desc: Casa, rotina, viagens, crianças e tudo que facilita a convivência.
+  color: "#2D5F8B"
+  animal: dog
+- slug: guia-de-compras
+  name: Guia de compras
+  short: Compras
+  desc: Como escolher bem camas, brinquedos e acessórios — sem propaganda disfarçada.
+  color: "#C77A14"
+  animal: dog
+- slug: gatos
+  name: Universo dos gatos
+  short: Gatos
+  desc: O comportamento, a saúde e os mistérios dos felinos.
+  color: "#5B3E8C"
+  animal: cat
+- slug: causa-animal
+  name: Proteção e causa animal
+  short: Causa animal
+  desc: Adoção responsável, resgate e quem trabalha para proteger os animais.
+  color: "#3E6B48"
+  animal: dog

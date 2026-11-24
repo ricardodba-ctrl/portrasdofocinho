@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block schema %}
+{% set graph = [
+ {"@type":"Article","headline":a.title,"description":a.description,"image":abs_url('assets/covers/' ~ a.slug ~ '.png'),
+  "datePublished":a.date.isoformat(),"dateModified":a.updated.isoformat(),"inLanguage":"pt-BR",
+  "author":{"@type":"Organization","name":cfg.site.editorial_team,"url":abs_url('sobre')},
+  "publisher":{"@type":"Organization","name":cfg.site.name,"logo":{"@type":"ImageObject","url":abs_url('assets/logo.png')}},
+  "mainEntityOfPage":abs_url(a.path),"articleSection":a.cat.name,"keywords":(a.keywords or []) | join(", "),"wordCount":a.words},
+ {"@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Início","item":abs_url('')},
+  {"@type":"ListItem","position":2,"name":a.cat.name,"item":abs_url('categoria/' ~ a.category)},
+  {"@type":"ListItem","position":3,"name":a.title,"item":abs_url(a.path)}]}] %}
+{% if a.faq %}{% set _ = graph.append({"@type":"FAQPage","mainEntity":[]}) %}{% for f in a.faq %}{% set _ = graph[-1].mainEntity.append({"@type":"Question","name":f.q,"acceptedAnswer":{"@type":"Answer","text":f.a}}) %}{% endfor %}{% endif %}
+<script type="application/ld+json">{{ json({"@context":"https://schema.org","@graph":graph}) }}</script>
+{% endblock %}
+{% block main %}
+<article class="post" style="--c:{{ a.cat.color }}">
+  <header class="post-head">
+    <div class="post-head-in">
+      {{ m.crumbs([("Início", url('')), (a.cat.name, url('categoria/' ~ a.category)), (a.title, None)]) }}
+      <p class="kicker light"><a href="{{ url('categoria/' ~ a.category) }}">{{ a.cat.short }}</a>{% if a.format_obj %}<span class="fmt">{{ a.format_obj.name }}</span>{% endif %}</p>
+      <h1>{{ a.title }}</h1>
+      <p class="post-dek">{{ a.description }}</p>
+      <p class="post-meta">Por <a href="{{ url('sobre') }}">{{ cfg.site.editorial_team }}</a> · <time datetime="{{ a.date.isoformat() }}">{{ date_br(a.date) }}</time>{% if a.updated != a.date %} · atualizado em <time datetime="{{ a.updated.isoformat() }}">{{ date_br(a.updated) }}</time>{% endif %} · {{ a.minutes }} min de leitura</p>
+      {% if a.category in ["saude"] or a.vet_review %}<p class="vet {{ 'ok' if a.vet_review and a.vet_review != 'pendente' else 'pending' }}">{% if a.vet_review and a.vet_review != 'pendente' %}Revisado por {{ a.vet_review }}{% else %}Revisão veterinária em andamento. Este conteúdo é informativo e não substitui a consulta.{% endif %}</p>{% endif %}
+    </div>
+    <div class="post-art">{{ m.cover(a, "hero-cover") }}</div>
+  </header>
+
+  <div class="post-wrap">
+    <aside class="post-side">
+      {% if a.toc | length >= 3 %}
+      <nav class="toc" aria-label="Neste artigo"><h2>Neste artigo</h2><ol>{% for t in a.toc %}<li><a href="#{{ t.id }}">{{ t.name | safe }}</a></li>{% endfor %}</ol></nav>
+      {% endif %}
+      {{ m.ad("sidebar") }}
+    </aside>
+    <div class="prose">
+      {{ body }}
+
+      {% if a.faq %}
+      <section class="faq" aria-labelledby="faq-h"><h2 id="faq-h">Perguntas frequentes</h2>
+        {% for f in a.faq %}<details><summary>{{ f.q }}</summary><p>{{ f.a }}</p></details>{% endfor %}
+      </section>
+      {% endif %}
+
+      {% if a.products and "[[produtos" not in a.body_md %}{{ m.products(prods(a.products)) }}{% endif %}
+      {% if "[[video" not in a.body_md %}{{ m.video(a.video_obj) }}{% endif %}
+
+      {% if a.sources %}
+      <section class="sources"><h2>Fontes</h2><ul>{% for s in a.sources %}<li>{% if s.url %}<a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.name }}</a>{% else %}{{ s.name }}{% endif %}</li>{% endfor %}</ul></section>
+      {% endif %}
+
+      {% if a.category == "saude" or a.vet_review %}<p class="disclaimer">Este artigo é informativo. Diante de qualquer sintoma, procure um médico-veterinário. <a href="{{ url('aviso-veterinario') }}">Leia nosso aviso sobre saúde animal</a>.</p>{% endif %}
+      {% if a.products %}<p class="disclaimer">Este artigo contém links de afiliado. <a href="{{ url('politica-de-afiliados') }}">Saiba como funcionam</a>.</p>{% endif %}
+
+      {{ m.share(a.title, abs_url(a.path)) }}
+    </div>
+  </div>
+</article>
+
+<section class="band band-tint">
+  <div class="sec-head"><h2>Continue lendo</h2></div>
+  {{ m.card_row(related(a, 4), "m") }}
+</section>
+<section class="band">{{ m.newsletter("band") }}</section>
+{% endblock %}

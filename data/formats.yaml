@@ -1,0 +1,19 @@
+# Formatos editoriais próprios — a "assinatura" do Por Trás do Focinho.
+- id: focinho-diz
+  name: O que o focinho diz
+  desc: Um comportamento por vez, decifrado. O que significa, por que acontece e quando prestar atenção.
+- id: ciencia-2min
+  name: Ciência em 2 minutos
+  desc: Um estudo de verdade, explicado sem jargão, com o link para a pesquisa original.
+- id: historias-ficaram
+  name: Histórias que ficaram
+  desc: Histórias reais e documentadas de animais. Nada inventado, tudo com fonte.
+- id: guia-sem-enrolacao
+  name: Guia sem enrolação
+  desc: Como escolher um produto pelo que importa para o seu pet. Sem notas inventadas, sem "top 10" de propaganda.
+- id: checklist-tutor
+  name: Checklist do tutor
+  desc: Listas práticas para imprimir, salvar e usar no dia a dia.
+- id: diario-resgate
+  name: Diário do resgate
+  desc: Histórias enviadas por leitores e ONGs, verificadas antes de publicar, com autorização de quem viveu.
