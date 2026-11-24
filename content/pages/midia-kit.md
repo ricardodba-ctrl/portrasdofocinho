@@ -1,5 +1,5 @@
 ---
-title: "Mídia kit · Por Trás do Focinho"
+title: "Mídia kit"
 slug: midia-kit
 description: Números reais do canal Por Trás do Focinho no YouTube, perfil do público, formatos comerciais e valores de referência para marcas pet.
 width: wide
