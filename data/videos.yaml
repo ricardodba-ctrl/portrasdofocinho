@@ -1,16 +1,27 @@
 # Vídeos do canal Por Trás do Focinho para incorporar nos artigos e na home.
-# Preencha youtube_id (o código depois de "v=" ou de "shorts/") e o artigo relacionado (slug).
-# Enquanto youtube_id estiver vazio, o portal mostra um convite para o canal.
+# youtube_id = código depois de "v=" ou de "shorts/". article = slug do artigo relacionado.
 items:
-  - title: Por que seu cachorro te segue pela casa?
-    youtube_id: ""
+  - title: "Por que o seu cachorro te segue até o banheiro?"
+    youtube_id: "zj5P-BwNPxI"
     article: por-que-meu-cachorro-me-segue-pela-casa
-  - title: Cachorro sente saudade quando você sai?
-    youtube_id: ""
-    article: ansiedade-de-separacao-em-caes
-  - title: Quantas horas um cachorro precisa dormir?
-    youtube_id: ""
-    article: quantas-horas-um-cachorro-dorme
-  - title: O que significa a piscada lenta do gato
-    youtube_id: ""
+  - title: "Seu cachorro percebe quando você está triste? 7 estudos explicados"
+    youtube_id: "AM-a27MLKkM"
+    article: olhar-cachorro-ocitocina
+  - title: "O olhar pidão do seu cachorro não é por acaso"
+    youtube_id: "-WSY6qfYbhs"
+    article: olhar-cachorro-ocitocina
+  - title: "Se o seu gato faz isso com os olhos, ele confia em você"
+    youtube_id: "kcLRroABv6w"
     article: piscada-lenta-gato
+  - title: "O que o seu gato está tentando te dizer: 8 sinais e quando procurar o veterinário"
+    youtube_id: "cEj1W3NutOI"
+    article: por-que-os-gatos-ronronam
+  - title: "Por que os gatos amassam pãozinho?"
+    youtube_id: "tKrDq2heFrc"
+    article: por-que-os-gatos-ronronam
+  - title: "7 sinais de que o seu pet precisa de um veterinário"
+    youtube_id: "L-KoDQTgVbw"
+    article: sinais-de-alerta-levar-cachorro-ao-veterinario
+  - title: "Seu cachorro entende o que você fala? A ciência olhou o cérebro dele"
+    youtube_id: "S7EVRn2npuQ"
+    article: comportamento-do-cachorro-guia-completo
