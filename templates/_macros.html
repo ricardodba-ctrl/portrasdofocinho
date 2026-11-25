@@ -33,7 +33,7 @@
   {% for p in items %}
   <div class="product">
     <div class="p-txt"><h4>{{ p.name }}</h4><p><b>Para quem:</b> {{ p.for }}</p><p><b>Por que ajuda:</b> {{ p.why }}</p></div>
-    <div class="p-links">{% for name, href in aff_links(p) %}<a class="btn-store" href="{{ href }}" rel="sponsored nofollow noopener" target="_blank" data-aff="{{ p.id }}|{{ name }}">Ver na {{ name }}</a>{% endfor %}</div>
+    <div class="p-links">{% for name, href in aff_links(p) %}<a class="btn-store" href="{{ href }}" rel="sponsored nofollow noopener" target="_blank" data-aff="{{ p.id }}|{{ name }}">Ver {{ "no" if name == "Mercado Livre" else "na" }} {{ name }}</a>{% endfor %}</div>
   </div>
   {% endfor %}
 </section>
