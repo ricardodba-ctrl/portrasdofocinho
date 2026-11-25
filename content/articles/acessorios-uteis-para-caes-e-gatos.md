@@ -1,7 +1,7 @@
 ---
 title: "Acessórios úteis para cães e gatos: o que serve para quê (sem propaganda disfarçada)"
 seo_title: "Acessórios úteis para cães e gatos: guia sem enrolação"
-description: "Tapete de lamber, comedouro lento, arranhador, caixa de transporte e portãozinho: para que cada um serve, para quem faz sentido e o que observar antes de comprar."
+description: "Tapete de lamber, comedouro lento, arranhador, caixa de transporte e portãozinho: para que serve cada um, para quem faz sentido e o que ver antes de comprar."
 category: guia-de-compras
 format: guia-sem-enrolacao
 date: 2026-11-30
@@ -48,3 +48,7 @@ Essencial para idas ao veterinário e viagens, principalmente com gatos. **Obser
 [[produtos]]
 
 [[leia:como-escolher-cama-para-cachorro]]
+
+[[leia:como-escolher-areia-para-gato]]
+
+[[leia:gato-arranha-o-sofa-como-resolver]]

@@ -1,7 +1,7 @@
 ---
 title: "O olhar de pidão tem explicação: cães têm um músculo que os lobos quase não têm"
 seo_title: "Olhar de pidão do cachorro: a explicação científica"
-description: "Um estudo de 2019 encontrou nos cães um músculo ao redor dos olhos que levanta a 'sobrancelha'. Nos lobos, ele é praticamente ausente. Entenda o que isso significa."
+description: "Um estudo de 2019 achou nos cães um músculo que levanta a 'sobrancelha'. Nos lobos, ele é praticamente ausente. Entenda o que isso significa."
 category: voce-sabia
 format: ciencia-2min
 date: 2026-11-17

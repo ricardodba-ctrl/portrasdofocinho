@@ -1,7 +1,7 @@
 ---
 title: "Seu gato te ignora? O que isso (não) significa, segundo a ciência"
 seo_title: "Gato me ignora: ele gosta de mim?"
-description: "Gato que não vem quando chamado não é frio. Veja como felinos demonstram apego, o que diz a pesquisa sobre vínculo com tutores e sinais de que ele confia em você."
+description: "Gato que não vem quando chamado não é frio. Veja como felinos demonstram apego, o que diz a pesquisa sobre vínculo com tutores e os sinais de confiança."
 category: gatos
 format: ciencia-2min
 date: 2026-11-26
@@ -28,7 +28,7 @@ Pesquisadores da Oregon State University adaptaram um teste usado para avaliar a
 
 - **Rabo para cima** ao se aproximar, como cumprimento;
 - **Cabeçadas e esfregar o rosto** em você, que deixam o cheiro dele;
-- **Piscada lenta**, que funciona como um “sorriso” ([[leia:piscada-lenta-gato]]);
+- **Piscada lenta**, que funciona como um “sorriso” (veja [como piscar devagar para o seu gato](@piscada-lenta-gato));
 - **Dormir perto** ou na mesma peça em que você está;
 - **Mostrar a barriga** relaxado (isso não é, necessariamente, convite para carinho ali).
 
@@ -48,3 +48,5 @@ Gatos são predadores solitários por origem e comunicam com mais sutileza. Muit
 Um gato que era sociável e **começou a se esconder, evitar contato ou se isolar** pode estar com dor, estresse ou doença. Nesse caso, procure o veterinário.
 
 [[leia:por-que-os-gatos-ronronam]]
+
+[[leia:como-brincar-com-gato-de-apartamento]]

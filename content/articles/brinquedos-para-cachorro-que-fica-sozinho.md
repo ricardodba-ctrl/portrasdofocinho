@@ -1,5 +1,6 @@
 ---
 title: "Brinquedos para cachorro que fica sozinho: o que realmente ajuda"
+seo_title: "Brinquedos para cachorro que fica sozinho: o que ajuda"
 description: "Brinquedos recheáveis, tapetes de lamber e de farejar ocupam a mente e ajudam o cão a ficar bem sozinho. Veja como escolher e usar com segurança."
 category: guia-de-compras
 format: guia-sem-enrolacao
@@ -58,3 +59,5 @@ Não é exatamente um brinquedo, mas transforma a refeição em um pequeno desaf
 [[leia:ansiedade-de-separacao-em-caes]]
 
 [[produtos]]
+
+[[leia:filhote-morde-tudo-o-que-fazer]]

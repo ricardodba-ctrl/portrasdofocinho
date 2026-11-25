@@ -1,5 +1,6 @@
 ---
 title: "Piscada lenta: como 'sorrir' para o seu gato, segundo a ciência"
+seo_title: "Piscada lenta: como 'sorrir' para o seu gato"
 description: "Um estudo de 2020 mostrou que gatos respondem às piscadas lentas humanas e se aproximam mais de quem pisca assim. Aprenda a técnica em 3 passos."
 category: gatos
 format: ciencia-2min

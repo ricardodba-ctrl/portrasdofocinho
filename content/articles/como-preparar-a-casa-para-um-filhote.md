@@ -77,3 +77,7 @@ O filhote aprende pela repetição. Se uma pessoa deixa subir no sofá e outra n
 Os primeiros meses de vida são uma fase especialmente importante para o filhote conhecer pessoas, sons, superfícies e outros animais de forma positiva. Converse com o veterinário sobre como socializar com segurança enquanto a vacinação não está completa.
 
 [[produtos]]
+
+[[leia:como-ensinar-filhote-fazer-xixi-no-lugar-certo]]
+
+[[leia:filhote-morde-tudo-o-que-fazer]]

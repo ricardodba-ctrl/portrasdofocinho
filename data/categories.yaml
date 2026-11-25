@@ -25,13 +25,13 @@
 - slug: voce-sabia
   name: Você sabia?
   short: Você sabia?
-  desc: Descobertas científicas sobre pets explicadas em poucos minutos.
+  desc: Descobertas científicas sobre cães e gatos explicadas em poucos minutos, com fonte e sem enrolação.
   color: "#D94A6E"
   animal: cat
 - slug: vida-com-pets
   name: Vida com pets
   short: Vida com pets
-  desc: Casa, rotina, viagens, crianças e tudo que facilita a convivência.
+  desc: Casa, rotina, viagens, crianças e tudo que facilita a convivência com cães e gatos no dia a dia.
   color: "#2D5F8B"
   animal: dog
 - slug: guia-de-compras
@@ -43,12 +43,12 @@
 - slug: gatos
   name: Universo dos gatos
   short: Gatos
-  desc: O comportamento, a saúde e os mistérios dos felinos.
+  desc: O comportamento, a saúde e os mistérios dos gatos — por que ronronam, ignoram, derrubam coisas e mais.
   color: "#5B3E8C"
   animal: cat
 - slug: causa-animal
   name: Proteção e causa animal
   short: Causa animal
-  desc: Adoção responsável, resgate e quem trabalha para proteger os animais.
+  desc: Adoção responsável, resgate e o trabalho de quem protege os animais, com guias e histórias reais da causa animal.
   color: "#3E6B48"
   animal: dog

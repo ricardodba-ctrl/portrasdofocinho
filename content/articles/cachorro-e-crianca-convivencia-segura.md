@@ -1,5 +1,6 @@
 ---
 title: "Cachorro e criança: 8 regras para uma convivência segura e feliz"
+seo_title: "Cachorro e criança: 8 regras para conviver com segurança"
 description: "A amizade entre crianças e cães é linda, mas precisa de supervisão e regras claras. Veja como ensinar os dois lados e reconhecer quando o cão precisa de espaço."
 category: vida-com-pets
 format: checklist-tutor

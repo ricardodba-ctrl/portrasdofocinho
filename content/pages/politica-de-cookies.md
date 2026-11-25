@@ -1,7 +1,7 @@
 ---
 title: Política de cookies
 slug: politica-de-cookies
-description: Quais cookies usamos, para quê, e como mudar suas preferências.
+description: Quais cookies o Por Trás do Focinho usa, para que servem e como você pode aceitar, recusar ou mudar suas preferências a qualquer momento.
 updated: 2026-11-24
 ---
 

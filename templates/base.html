@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{ title }}{% if not is_home %} | {{ cfg.site.name }}{% endif %}</title>
+{% set _full = title ~ ' | ' ~ cfg.site.name %}<title>{{ title if (is_home or _full | length > 60) else _full }}</title>
 <meta name="description" content="{{ description }}">
 {% if noindex %}<meta name="robots" content="noindex, follow">{% else %}<meta name="robots" content="index, follow, max-image-preview:large">{% endif %}
 <link rel="canonical" href="{{ canonical }}">

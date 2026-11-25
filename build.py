@@ -345,10 +345,10 @@ def build():
         body, toc = render_md(p["body_md"])
         body = expand_shortcodes(body, p)
         render(p.get("template", "page.html"), path, p=p, body=Markup(body), toc=toc,
-               title=p["title"], description=p.get("description", ""),
+               title=p.get("seo_title", p["title"]), description=p.get("description", ""),
                noindex=p.get("noindex", False))
 
-    render("home.html", "", title=CFG["site"]["name"] + " — comportamento, saúde e curiosidades de cães e gatos",
+    render("home.html", "", title=CFG["site"]["name"] + ": comportamento e saúde de cães e gatos",
            description=CFG["site"]["tagline"], is_home=True)
     render("painel.html", "painel", title="Painel editorial e de receita", description="", noindex=True)
     render("404.html", "404", title="Página não encontrada", description="", noindex=True)

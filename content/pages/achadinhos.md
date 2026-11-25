@@ -1,5 +1,6 @@
 ---
 title: "Achadinhos do Focinho: produtos que fazem diferença na vida dos pets"
+seo_title: "Achadinhos do Focinho: produtos úteis para cães e gatos"
 slug: achadinhos
 description: Curadoria do Por Trás do Focinho com produtos úteis para cães e gatos, para que serve cada um e para quem faz sentido. Links de afiliado identificados.
 width: wide

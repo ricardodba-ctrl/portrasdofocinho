@@ -1,7 +1,7 @@
 ---
 title: Termos de uso
 slug: termos-de-uso
-description: Regras de uso do portal Por Trás do Focinho.
+description: "Termos de uso do portal Por Trás do Focinho: regras de acesso, conteúdo, links de afiliados e responsabilidades de quem usa o site."
 updated: 2026-11-24
 ---
 

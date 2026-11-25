@@ -1,5 +1,6 @@
 ---
 title: "Adoção responsável: o que avaliar antes de adotar um cão ou gato"
+seo_title: "Adoção responsável: o que avaliar antes de adotar"
 description: "Tempo, espaço, custos e compromisso de muitos anos: as perguntas que você deve fazer antes de adotar, e como escolher um abrigo ou ONG sério."
 category: causa-animal
 format: checklist-tutor
@@ -55,3 +56,5 @@ Se agora não é o momento de adotar, você pode ser **lar temporário**, apadri
 <div class="box" markdown="1">
 **Patas que Transformam.** O projeto social do Por Trás do Focinho destina parte da receita de produtos solidários a ações de apoio animal, com prestação de contas pública. [Conheça o projeto](@page:patas-que-transformam).
 </div>
+
+[[leia:como-apresentar-gato-novo-ao-gato-da-casa]]

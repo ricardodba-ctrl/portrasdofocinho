@@ -1,6 +1,6 @@
 ---
 title: "Alimentos proibidos para cães: a lista do que nunca oferecer"
-seo_title: "Alimentos proibidos para cachorro: lista completa e o que fazer"
+seo_title: "Alimentos proibidos para cachorro: lista completa"
 description: "Chocolate, uva, cebola, xilitol, macadâmia e outros alimentos tóxicos para cachorros: por que fazem mal, quais sintomas observar e o que fazer se o cão comer."
 category: saude
 format: checklist-tutor

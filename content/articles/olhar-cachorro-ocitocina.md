@@ -1,7 +1,7 @@
 ---
 title: "Olhar nos olhos do seu cachorro aumenta o 'hormônio do vínculo' nos dois"
 seo_title: "Olhar o cachorro nos olhos aumenta a ocitocina nos dois"
-description: "Pesquisadores japoneses mediram a ocitocina de cães e tutores antes e depois de se olharem. O resultado ajuda a explicar a força do vínculo entre as duas espécies."
+description: "Pesquisadores japoneses mediram a ocitocina de cães e tutores antes e depois de se olharem. O resultado ajuda a explicar o vínculo entre as espécies."
 category: voce-sabia
 format: ciencia-2min
 date: 2026-11-10

@@ -1,7 +1,7 @@
 ---
 title: "Por que os gatos ronronam? O que a ciência já sabe (e o que ainda é mistério)"
 seo_title: "Por que os gatos ronronam? O que a ciência sabe"
-description: "O ronronar nem sempre é sinal de felicidade. Entenda como o som é produzido, em que situações os gatos ronronam e o que pesquisas dizem sobre o 'ronronar de pedido'."
+description: "O ronronar nem sempre é felicidade. Entenda como o som é produzido, quando os gatos ronronam e o que pesquisas dizem sobre o 'ronronar de pedido'."
 category: gatos
 format: ciencia-2min
 date: 2026-11-09
@@ -57,3 +57,5 @@ O ronronar não garante que está tudo bem. Se o seu gato ronrona mas está **es
 Olhe o conjunto: orelhas, olhos, rabo e postura. Um gato relaxado, com olhos semicerrados e corpo solto, provavelmente está mesmo curtindo o momento.
 
 [[leia:piscada-lenta-gato]]
+
+[[leia:gato-bebe-pouca-agua]]

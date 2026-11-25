@@ -1,6 +1,6 @@
 ---
 title: "Ansiedade de separação em cães: sinais, causas e como ajudar"
-description: "Choro, destruição e xixi fora do lugar quando o tutor sai podem ser ansiedade de separação. Saiba reconhecer, o que fazer em casa e quando procurar o veterinário."
+description: "Choro, destruição e xixi fora do lugar quando o tutor sai podem ser ansiedade de separação. Saiba reconhecer e o que fazer em casa."
 category: comportamento
 format: focinho-diz
 date: 2026-11-18

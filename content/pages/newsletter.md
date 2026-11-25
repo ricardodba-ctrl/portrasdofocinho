@@ -1,7 +1,7 @@
 ---
 title: Newsletter Por Trás do Focinho
 slug: newsletter
-description: Uma vez por semana, os melhores artigos, vídeos e descobertas sobre cães e gatos. E, de presente, o guia 25 coisas que seu cachorro gostaria que você entendesse.
+description: Uma vez por semana, os melhores artigos, vídeos e descobertas sobre cães e gatos. De presente, o guia 25 coisas que seu cachorro gostaria que você entendesse.
 ---
 
 [[newsletter]]

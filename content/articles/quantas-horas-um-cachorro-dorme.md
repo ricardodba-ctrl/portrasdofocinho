@@ -1,7 +1,7 @@
 ---
 title: "Quantas horas um cachorro dorme por dia? A resposta muda com a idade"
 seo_title: "Quantas horas um cachorro dorme por dia? Veja por idade"
-description: "Filhotes, adultos e idosos têm necessidades de sono diferentes. Veja quanto um cão costuma dormir, por que o sono importa e quando o excesso ou a falta preocupam."
+description: "Filhotes, adultos e idosos dormem quantidades diferentes. Veja quanto um cão costuma dormir por idade e quando o excesso ou a falta de sono preocupa."
 category: saude
 format: ciencia-2min
 date: 2026-11-16
