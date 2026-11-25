@@ -161,9 +161,14 @@ def cover_svg(seed, color, animal, w=1200, h=675):
 # ---------------------------------------------------------------- afiliados
 def aff_links(p):
     # Produto com link de afiliado próprio (ex.: meli.la) tem prioridade sobre a busca genérica.
+    a = CFG["affiliates"]
     if p.get("links"):
-        return [(store, href) for store, href in p["links"].items() if href]
-    a = CFG["affiliates"]; q = p["search"]
+        out = [(store, href) for store, href in p["links"].items() if href]
+        # Com a tag da Amazon configurada, oferece também a busca na Amazon (com comissão).
+        if a.get("amazon_tag") and p.get("search") and "Amazon" not in p["links"]:
+            out.append(("Amazon", f"https://www.amazon.com.br/s?k={quote_plus(p['search'])}&tag={a['amazon_tag']}"))
+        return out
+    q = p["search"]
     amz = f"https://www.amazon.com.br/s?k={quote_plus(q)}" + (f"&tag={a['amazon_tag']}" if a.get("amazon_tag") else "")
     return [("Amazon", amz),
             ("Mercado Livre", "https://lista.mercadolivre.com.br/" + slugify(q)),

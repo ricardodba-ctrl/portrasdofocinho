@@ -30,7 +30,7 @@ adsense:
   # Enquanto client_id estiver vazio, a prévia mostra os espaços reservados.
 
 affiliates:
-  amazon_tag: ""          # ex.: portrasdofocinho-20  (Amazon Associados Brasil)
+  amazon_tag: "portrasdofoci-20"   # Amazon Associados Brasil, conta criada em 24/11/2026
   mercadolivre_id: ""     # PENDENTE: ID do programa de afiliados Mercado Livre
   petlove_ref: ""         # PENDENTE: confirmar programa ativo e condições
   cobasi_ref: ""          # PENDENTE: confirmar programa ativo e condições
