@@ -251,6 +251,7 @@ p{margin:0 0 1em}
 
 /* cookies */
 .cookie{position:fixed;left:12px;right:12px;bottom:12px;z-index:70;max-width:760px;margin:auto;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;background:var(--teal);color:#fff;border-radius:var(--r);padding:14px 18px;box-shadow:0 10px 30px rgba(0,0,0,.3);font-size:15px}
+[hidden]{display:none!important}
 .cookie p{margin:0;flex:1 1 280px}.cookie div{display:flex;gap:8px;flex-wrap:wrap}
 .cookie .btn{min-height:44px;font-size:15px}
 
