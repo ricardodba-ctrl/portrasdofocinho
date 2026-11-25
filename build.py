@@ -229,6 +229,8 @@ def related(a, n=4):
     pool += [x for x in ARTICLES if x is not a and x not in pool and x["category"] == a["category"]]
     pool += [x for x in ARTICLES if x is not a and x not in pool]
     return pool[:n]
+import hashlib
+env.globals["asset_v"] = hashlib.sha1((ROOT / "static/assets/site.css").read_bytes() + (ROOT / "static/assets/site.js").read_bytes()).hexdigest()[:10]
 env.globals["related"] = related
 env.globals["prods"] = lambda ids: [PRODUCTS[i] for i in (ids or []) if i in PRODUCTS]
 

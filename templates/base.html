@@ -21,7 +21,7 @@
 {% if cfg.analytics.search_console_verification %}<meta name="google-site-verification" content="{{ cfg.analytics.search_console_verification }}">{% endif %}
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght,SOFT@9..144,600..800,100&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{{ url('assets/site.css') }}">
+<link rel="stylesheet" href="{{ url('assets/site.css') }}?v={{ asset_v }}">
 <script>
 /* LGPD: Consent Mode v2 — tudo negado até o leitor escolher */
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
@@ -87,6 +87,6 @@ try{if(localStorage.getItem('ptf-consent')==='all'){gtag('consent','update',{ad_
 </div>
 
 <script>window.PTF={root:"{{ url('') | replace('index.html','') }}",mode:"{{ MODE }}",idx:"{{ url('search-index.json') }}",guide:"{{ url('guia-gratuito') }}"};</script>
-<script src="{{ url('assets/site.js') }}" defer></script>
+<script src="{{ url('assets/site.js') }}?v={{ asset_v }}" defer></script>
 </body>
 </html>
