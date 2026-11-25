@@ -9,6 +9,8 @@ Aqui não tem lista de "mais vendidos" nem nota inventada. Cada item entrou porq
 
 > **Transparência:** os botões abaixo são links de afiliado. Se você comprar por eles, o Por Trás do Focinho pode receber uma comissão, sem custo extra para você. Isso não muda a nossa escolha. Veja a [política de afiliados](@page:politica-de-afiliados).
 
+[[foto: gato-e-cao]]
+
 ## Para gatos
 
 [[produtos: ml-fonte-agua, ml-sache-gato, ml-tapete-coletor-areia, ml-areia-mandioca, ml-varinha-gato, ml-tunel-gato]]

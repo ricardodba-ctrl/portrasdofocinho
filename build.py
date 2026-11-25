@@ -31,6 +31,7 @@ CATS = load("data/categories.yaml")
 CAT = {c["slug"]: c for c in CATS}
 PRODUCTS = {p["id"]: p for p in load("data/products.yaml")}
 VIDEOS = load("data/videos.yaml")
+PHOTOS = {p["id"]: p for p in load("data/photos.yaml")}
 FORMATS = {f["id"]: f for f in load("data/formats.yaml")}
 SITE_URL = CFG["site"]["url"].rstrip("/")
 
@@ -248,6 +249,10 @@ def expand_shortcodes(html_, ctx):
             print(f"  aviso: [[leia:{arg}]] aponta para artigo inexistente"); return ""
         if name == "video":
             return str(M.video(ctx.get("video_obj")))
+        if name == "foto":
+            if arg in PHOTOS:
+                return str(M.photo(PHOTOS[arg]))
+            print(f"  aviso: [[foto: {arg}]] não existe em data/photos.yaml"); return ""
         if name == "newsletter":
             return str(M.newsletter("inline"))
         if name == "campanha":

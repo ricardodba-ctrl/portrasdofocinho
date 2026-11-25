@@ -2,6 +2,7 @@
 # Regra editorial: só descrevemos para que o produto serve e para quem faz sentido.
 # Nunca inventamos preço, nota, teste ou experiência pessoal. Preço e avaliações ficam na loja.
 # Campo links: link de afiliado do produto específico (tem prioridade). Sem links, o site usa a busca genérica.
+# Campo image (opcional): foto do produto exibida ao lado do item (hotlink do Mercado Livre; se falhar, o site esconde a foto sozinho).
 # Links Mercado Livre dos 10 primeiros itens gerados em 24/11/2026 (nota >= 4,6, mais vendidos, sem anúncio patrocinado).
 items:
   - id: cama-ortopedica
@@ -10,60 +11,70 @@ items:
     why: Distribui o peso do corpo e evita que o cão afunde até tocar o chão.
     search: cama ortopedica cachorro espuma
     links: {Mercado Livre: "https://meli.la/2xCfNfb"}
+    image: "https://http2.mlstatic.com/D_Q_NP_2X_689005-MLA108128132862_032026-V.webp"
   - id: cama-ninho
     name: Cama ninho redonda com borda alta
     for: Gatos e cães pequenos que dormem enrolados e gostam de apoiar a cabeça.
     why: A borda dá sensação de abrigo e serve de travesseiro.
     search: cama ninho cachorro borda alta
     links: {Mercado Livre: "https://meli.la/25oggG5"}
+    image: "https://http2.mlstatic.com/D_Q_NP_2X_614860-MLA109764006388_042026-V.webp"
   - id: colchonete-impermeavel
     name: Colchonete com capa impermeável e removível
     for: Filhotes, cães idosos e casas com área externa.
     why: A capa sai para lavar e a espuma não absorve xixi nem umidade.
     search: colchonete cachorro capa impermeavel removivel
     links: {Mercado Livre: "https://meli.la/2q9P4cr"}
+    image: "https://http2.mlstatic.com/D_Q_NP_2X_868458-MLB108021594409_032026-V.webp"
   - id: kong-recheavel
     name: Brinquedo recheável de borracha resistente
     for: Cães que ficam sozinhos ou que mastigam muito.
     why: Rechear e congelar prolonga a atividade e ocupa a mente.
     search: brinquedo recheavel cachorro borracha
     links: {Mercado Livre: "https://meli.la/2kxmNiS"}
+    image: "https://http2.mlstatic.com/D_Q_NP_2X_670588-MLA99491188876_112025-V.webp"
   - id: tapete-lamber
     name: Tapete de lamber com ventosa
     for: Cães ansiosos e momentos como banho ou corte de unhas.
     why: Lamber é uma atividade calmante; o tapete espalha o petisco e prolonga a tarefa.
     search: tapete de lamber cachorro
     links: {Mercado Livre: "https://meli.la/2cjUd3e"}
+    image: "https://http2.mlstatic.com/D_Q_NP_2X_862526-MLA110304208428_052026-V.webp"
   - id: tapete-farejar
     name: Tapete de farejar (snuffle mat)
     for: Cães que comem rápido demais ou se entediam em casa.
     why: Transforma a refeição em busca pelo faro, o sentido mais forte do cão.
     search: tapete farejador cachorro
     links: {Mercado Livre: "https://meli.la/2guFSG8"}
+    image: "https://http2.mlstatic.com/D_Q_NP_2X_855034-MLB110830263045_042026-V.webp"
   - id: comedouro-lento
     name: Comedouro lento (slow feeder)
     for: Cães que engolem a ração em segundos.
     why: Os relevos obrigam o cão a comer mais devagar.
     search: comedouro lento cachorro
     links: {Mercado Livre: "https://meli.la/1LeTNKR"}
+    image: "https://http2.mlstatic.com/D_Q_NP_2X_770043-MLA100082889101_122025-V.webp"
   - id: portao-pet
     name: Portãozinho de segurança para pets
     for: Casas com escada, filhotes e convivência com bebês.
     why: Cria áreas seguras sem trancar o cão em um cômodo.
     search: portao seguranca pet escada
     links: {Mercado Livre: "https://meli.la/2hpz6Kw"}
+    image: "https://http2.mlstatic.com/D_Q_NP_2X_893505-MLA95675345086_102025-V.webp"
   - id: caixa-transporte
     name: Caixa de transporte ventilada
     for: Viagens, idas ao veterinário e gatos.
     why: Uma caixa conhecida e confortável reduz o estresse do deslocamento.
     search: caixa transporte pet
     links: {Mercado Livre: "https://meli.la/1gMxmKn"}
+    image: "https://http2.mlstatic.com/D_Q_NP_2X_931288-MLA110196433518_052026-V.webp"
   - id: arranhador
     name: Arranhador de poste firme
     for: Gatos de todas as idades.
     why: Arranhar é necessidade do gato; um arranhador estável poupa o sofá.
     search: arranhador gato vertical
     links: {Mercado Livre: "https://meli.la/19Qe5em"}
+    image: "https://http2.mlstatic.com/D_Q_NP_2X_836170-MLA112817265193_062026-V.webp"
 
   # ---- Achadinhos do Focinho: produtos específicos com link de afiliado Mercado Livre
   # Links conferidos em 24/11/2026 (os mesmos usados nos Shorts do canal). Preço fica na loja.
@@ -73,57 +84,67 @@ items:
     why: Os relevos seguram os grãos presos nas patas e o tapete é fácil de sacudir e lavar.
     group: gatos
     links: {Mercado Livre: "https://meli.la/2XfSZaU"}
+    image: "https://http2.mlstatic.com/D_Q_NP_2X_693102-MLB121211865463_112026-V.webp"
   - id: ml-fonte-agua
     name: Fonte de água com filtro (1,5 L, USB)
     for: Gatos que bebem pouca água ou preferem água corrente.
     why: "A água em movimento atrai muitos gatos; o filtro precisa de limpeza e troca regular."
     group: gatos
     links: {Mercado Livre: "https://meli.la/2dnErNg"}
+    image: "https://http2.mlstatic.com/D_Q_NP_2X_978802-MLB117061702135_092026-V.webp"
   - id: ml-areia-mandioca
     name: Areia de mandioca biodegradável (4 kg)
     for: Tutores que querem areia vegetal, que forma torrões e pode ser descartada com menos impacto.
     why: "Troque aos poucos, misturando com a areia antiga: muitos gatos estranham mudança brusca."
     group: gatos
     links: {Mercado Livre: "https://meli.la/2LPLKHH"}
+    image: "https://http2.mlstatic.com/D_Q_NP_2X_632907-MLA115701618116_092026-V.webp"
   - id: ml-varinha-gato
     name: Kit de varinhas e brinquedos interativos para gato
     for: Gatos de apartamento que caçam os pés e os objetos da casa.
     why: Sessões curtas de caça com varinha gastam energia e reduzem a caça a coisas proibidas.
     group: gatos
     links: {Mercado Livre: "https://meli.la/1umXznJ"}
+    image: "https://http2.mlstatic.com/D_Q_NP_2X_718725-MLA118859962585_102026-V.webp"
   - id: ml-tunel-gato
     name: Túnel dobrável para gatos
     for: Gatos que gostam de se esconder e de brincar de emboscada.
     why: Esconderijo é necessidade do gato; o túnel vira abrigo e brinquedo ao mesmo tempo.
     group: gatos
     links: {Mercado Livre: "https://meli.la/2vG5ddH"}
+    image: "https://http2.mlstatic.com/D_Q_NP_2X_666901-MLA99598104360_122025-V.webp"
   - id: ml-sache-gato
     name: Sachês de alimento úmido para gato adulto
     for: Gatos que bebem pouca água, como complemento da alimentação.
     why: O alimento úmido aumenta a ingestão de água. Mudanças na dieta devem ser feitas com orientação veterinária.
     group: gatos
     links: {Mercado Livre: "https://meli.la/1PKZVU2"}
+    image: "https://http2.mlstatic.com/D_Q_NP_2X_684780-MLA118487055202_102026-V.webp"
   - id: ml-kit-mordedores
     name: Kit com 6 mordedores para filhote
     for: Filhotes na troca de dentes que mordem móveis, sapatos e mãos.
     why: Oferecer alternativas permitidas e trocar o objeto proibido pelo mordedor ensina o que pode morder.
     group: caes
     links: {Mercado Livre: "https://meli.la/2ceWcnZ"}
+    image: "https://http2.mlstatic.com/D_Q_NP_2X_945902-MLB112686540759_062026-V.webp"
   - id: ml-tapete-higienico
     name: Tapete higiênico para cães (50 unidades)
     for: Filhotes aprendendo onde fazer xixi e cães que ficam muito tempo em apartamento.
     why: Um lugar fixo e fácil de identificar ajuda o filhote a acertar; recompense sempre que ele usar.
     group: caes
     links: {Mercado Livre: "https://meli.la/2hTKmSw"}
+    image: "https://http2.mlstatic.com/D_Q_NP_2X_971200-MLA114202177794_082026-V.webp"
   - id: ml-caminha-impermeavel
     name: Caminha impermeável com zíper (cão pequeno e gato)
     for: Filhotes, pets idosos e quem precisa lavar a capa com frequência.
     why: A capa impermeável sai pelo zíper e protege a espuma de xixi e umidade.
     group: casa
     links: {Mercado Livre: "https://meli.la/26v6duA"}
+    image: "https://http2.mlstatic.com/D_Q_NP_2X_860732-MLB119919519805_102026-V-caminha-pet-pra-cachorro-raca-pequena-gato-impermeavel-ziper.webp"
   - id: ml-pote-racao
     name: Pote hermético para ração (2,5 L, com medidor)
     for: Quem compra ração em saco grande.
     why: Guardar a ração no saco original dentro do pote fechado ajuda a manter o alimento protegido de ar e umidade.
     group: casa
     links: {Mercado Livre: "https://meli.la/27S6fZz"}
+    image: "https://http2.mlstatic.com/D_Q_NP_2X_697834-MLA117714233735_092026-V.webp"

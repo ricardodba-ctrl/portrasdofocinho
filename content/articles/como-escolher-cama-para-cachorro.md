@@ -21,6 +21,8 @@ faq:
 
 Este é um guia da série **Guia sem enrolação**: explicamos o que importa para escolher. Não atribuímos notas e não inventamos testes. Preços e avaliações de outros compradores você confere direto nas lojas.
 
+[[foto: cao-na-cama]]
+
 ## Passo 1: observe como ele dorme
 
 | Jeito de dormir | O que costuma funcionar |

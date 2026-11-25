@@ -31,6 +31,8 @@ O cachorro não fala, mas passa o dia inteiro se comunicando. A posição das or
 
 Este guia reúne o essencial para entender o seu cachorro. Ele é a porta de entrada da nossa série **O que o focinho diz**: cada comportamento tem um artigo próprio, aprofundado, linkado ao longo do texto.
 
+[[foto: cao-retrato]]
+
 ## Como o cachorro se comunica
 
 O cão usa três canais ao mesmo tempo: o **corpo**, a **voz** e o **olfato**. Para nós, o olfato é quase invisível, mas para ele é o principal. Cheirar o chão no passeio é ler o “jornal do bairro”: quem passou, quando e em que estado.

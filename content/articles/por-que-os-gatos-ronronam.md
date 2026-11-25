@@ -22,6 +22,8 @@ sources:
 
 **Resposta rápida:** o gato ronrona por meio de vibrações rápidas dos músculos da laringe enquanto respira. Ele faz isso quando está relaxado, mas também quando está estressado, com dor ou quer alguma coisa. Por isso, ronronar é mais um sinal de comunicação e autorregulação do que um “sinal de felicidade”.
 
+[[foto: gato-dormindo]]
+
 ## Como o som é produzido
 
 Os músculos da laringe se contraem e relaxam muito rapidamente, abrindo e fechando a passagem de ar. O resultado é aquele som contínuo, produzido tanto ao inspirar quanto ao expirar. Os filhotes já ronronam com poucos dias de vida, provavelmente como forma de comunicação com a mãe durante a amamentação.

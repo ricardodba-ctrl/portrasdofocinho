@@ -31,13 +31,23 @@
 <section class="products" aria-label="Produtos recomendados">
   <header><h3>Onde encontrar</h3><p>Links de afiliado: se você comprar por eles, o Por Trás do Focinho pode receber uma comissão, sem custo extra para você. Preços e avaliações estão nas lojas. <a href="{{ url('politica-de-afiliados') }}">Como escolhemos</a></p></header>
   {% for p in items %}
-  <div class="product">
+  {% set links = aff_links(p) %}
+  <div class="product{{ ' has-img' if p.image }}">
+    {% if p.image %}<a class="p-img" href="{{ links[0][1] }}" rel="sponsored nofollow noopener" target="_blank" tabindex="-1" aria-hidden="true" data-aff="{{ p.id }}|{{ links[0][0] }}"><img src="{{ p.image }}" alt="{{ p.name }}" width="120" height="120" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="var d=this.closest('.product');d.classList.remove('has-img');this.parentNode.remove()"></a>{% endif %}
     <div class="p-txt"><h4>{{ p.name }}</h4><p><b>Para quem:</b> {{ p.for }}</p><p><b>Por que ajuda:</b> {{ p.why }}</p></div>
-    <div class="p-links">{% for name, href in aff_links(p) %}<a class="btn-store" href="{{ href }}" rel="sponsored nofollow noopener" target="_blank" data-aff="{{ p.id }}|{{ name }}">Ver {{ "no" if name == "Mercado Livre" else "na" }} {{ name }}</a>{% endfor %}</div>
+    <div class="p-links">{% for name, href in links %}<a class="btn-store" href="{{ href }}" rel="sponsored nofollow noopener" target="_blank" data-aff="{{ p.id }}|{{ name }}">Ver {{ "no" if name == "Mercado Livre" else "na" }} {{ name }}</a>{% endfor %}</div>
   </div>
   {% endfor %}
 </section>
 {% endif %}
+{%- endmacro %}
+
+{% macro photo(f) -%}
+{% set base = "https://images.unsplash.com/" ~ f.photo ~ "?auto=format&fit=crop&crop=focalpoint&fp-x=.5&fp-y=" ~ f.fy ~ "&q=70&h=" %}
+<figure class="photo">
+  <img src="{{ base }}675&w=1200" srcset="{{ base }}338&w=600 600w, {{ base }}675&w=1200 1200w" sizes="(min-width:900px) 700px, 92vw" alt="{{ f.alt }}" width="1200" height="675" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+  <figcaption>Foto: <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a></figcaption>
+</figure>
 {%- endmacro %}
 
 {% macro video(v) -%}

@@ -1,0 +1,20 @@
+# Fotos editoriais (Unsplash, licença livre para uso comercial). Uso: [[foto: id]] sozinho em uma linha do texto.
+# Regra: no máximo 1 foto por artigo e só onde ela ajuda a entender ou a escolher. Capas ilustradas continuam nos cards.
+# fy = ponto de foco vertical do recorte 16:9 (0 = topo, 1 = base).
+items:
+  - id: gato-e-cao
+    photo: photo-1450778869180-41d0601e046e
+    alt: Gato malhado e cão claro deitados juntos na grama
+    fy: 0.5
+  - id: cao-retrato
+    photo: photo-1558788353-f76d92427f16
+    alt: Cão golden retriever de frente, com a língua para fora, sobre fundo azul
+    fy: 0.4
+  - id: gato-dormindo
+    photo: photo-1543201245-c9031909fe6f
+    alt: Gato malhado dormindo enrolado em um deque de madeira
+    fy: 0.55
+  - id: cao-na-cama
+    photo: photo-1492748046438-4b6d9ebe0c11
+    alt: Cão marrom deitado em uma caminha cinza, em uma sala de piso de madeira
+    fy: 0.72
