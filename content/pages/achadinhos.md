@@ -14,7 +14,7 @@ Aqui não tem lista de "mais vendidos" nem nota inventada. Cada item entrou porq
 
 ## Para gatos
 
-[[produtos: ml-fonte-agua, ml-sache-gato, ml-tapete-coletor-areia, ml-areia-mandioca, ml-varinha-gato, ml-tunel-gato]]
+[[produtos: ml-brinquedo-laser-pena, ml-fonte-agua, ml-sache-gato, ml-tapete-coletor-areia, ml-areia-mandioca, ml-varinha-gato, ml-tunel-gato]]
 
 ## Para cães e filhotes
 
