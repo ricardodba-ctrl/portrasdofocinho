@@ -19,6 +19,7 @@ faq:
 sources:
   - name: "American Kennel Club — informações sobre raças"
     url: "https://www.akc.org/dog-breeds/"
+products: [tapete-farejar, kong-recheavel, ml-tapete-higienico]
 ---
 
 “Qual cachorro é bom para apartamento?” é uma das perguntas mais buscadas por quem vai ter o primeiro cão. A resposta mais comum, “um cachorro pequeno”, está só parcialmente certa. Há cães pequenos agitados e barulhentos que sofrem em espaços fechados, e cães grandes e tranquilos que vivem muito bem em 60 metros quadrados.

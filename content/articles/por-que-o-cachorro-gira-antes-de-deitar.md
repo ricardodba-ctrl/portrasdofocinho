@@ -8,6 +8,7 @@ date: 2026-11-14
 cluster: comportamento-canino
 keywords: [cachorro gira antes de deitar, cachorro dá voltas antes de deitar, cachorro cava a cama]
 related: [comportamento-do-cachorro-guia-completo, como-escolher-cama-para-cachorro]
+products: [cama-ninho, cama-ortopedica]
 ---
 
 Uma, duas, três voltas. Uma cavadinha na almofada. Mais uma volta. E, finalmente, o cachorro desaba. Quase todo tutor já assistiu a esse ritual, e a pergunta é inevitável: para que tudo isso?

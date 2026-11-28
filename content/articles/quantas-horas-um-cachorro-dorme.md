@@ -14,6 +14,7 @@ faq:
     a: "Um cão adulto saudável costuma passar boa parte do dia dormindo ou descansando, especialmente se fica sozinho em casa. O que preocupa é uma mudança: um cão que passa a dormir muito mais do que o normal, tem dificuldade para acordar ou perde o interesse por passeios e comida."
   - q: "Cachorro sonha?"
     a: "Os cães têm fases de sono semelhantes às nossas, incluindo o sono REM, associado aos sonhos em humanos. Movimentos de patas, pequenos latidos e tremores durante o sono são comuns e, em geral, normais."
+products: [cama-ortopedica, cama-ninho, colchonete-impermeavel]
 ---
 
 Se você tem a impressão de que seu cachorro passa mais tempo dormindo do que acordado, provavelmente está certo. Cães dormem bem mais do que nós, e isso é esperado. A quantidade, porém, varia bastante com a idade, o porte e a rotina.

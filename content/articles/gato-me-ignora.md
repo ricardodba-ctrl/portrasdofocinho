@@ -16,6 +16,7 @@ faq:
 sources:
   - name: "Vitale, K. R., Behnke, A. C., Udell, M. A. R. (2019). Attachment bonds between domestic cats and humans. Current Biology, 29(18), R864."
     url: "https://doi.org/10.1016/j.cub.2019.08.036"
+products: [ml-varinha-gato, ml-tunel-gato]
 ---
 
 **Resposta rápida:** gato que não corre quando você chama não é, por isso, desinteressado. Uma pesquisa de 2019 mostrou que a maioria dos gatos forma vínculos de apego com os tutores, parecidos com os de cães e bebês. A diferença é que o gato demonstra de um jeito mais discreto.

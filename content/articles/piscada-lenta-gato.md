@@ -11,6 +11,7 @@ related: [por-que-os-gatos-ronronam]
 sources:
   - name: "Humphrey, T. et al. (2020). The role of cat eye narrowing movements in cat–human communication. Scientific Reports."
     url: "https://www.nature.com/articles/s41598-020-73426-0"
+products: [ml-varinha-gato, ml-tunel-gato]
 ---
 
 **Resposta rápida:** quando um gato fecha os olhos devagar olhando para você, é um sinal de relaxamento e confiança. Você pode responder do mesmo jeito. Pesquisadores mostraram que gatos tendem a devolver a piscada lenta e a se aproximar mais de pessoas desconhecidas que piscam assim.

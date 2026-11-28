@@ -13,6 +13,7 @@ faq:
     a: "Muitas vezes, sim. O gesto costuma ser um pedido de contato ou de atenção, e se o cão aprendeu que funciona, tende a repetir."
   - q: "Devo ignorar quando o cachorro coloca a pata em mim?"
     a: "Depende do contexto. Se for um pedido exagerado e constante, retribuir só quando ele estiver calmo ajuda. Se for um gesto novo, acompanhado de outros sinais, observe a saúde dele."
+products: [kong-recheavel, tapete-farejar]
 ---
 
 **Resposta rápida:** na maioria das vezes, a pata no seu braço é um jeito de se comunicar: o cão quer atenção, contato ou algo que está ao seu alcance. Como o gesto costuma funcionar, ele se repete. Só merece cuidado quando é novo, intenso ou vem com outros sinais de desconforto.

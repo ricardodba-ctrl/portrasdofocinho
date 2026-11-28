@@ -220,7 +220,7 @@ env = Environment(loader=FileSystemLoader(ROOT / "templates"), autoescape=True,
 env.globals.update(url=url, abs_url=abs_url, cfg=CFG, cats=CATS, CAT=CAT, MODE=MODE,
                    date_br=date_br, aff_links=aff_links, PRODUCTS=PRODUCTS, VIDEOS=VIDEOS,
                    FORMATS=FORMATS, articles=ARTICLES, BY_SLUG=BY_SLUG, shade=shade,
-                   year=TODAY.year, json=lambda o: Markup(json.dumps(o, ensure_ascii=False).replace("</", "<\\/")))
+                   year=TODAY.year, natal_season=(TODAY.month == 12 and TODAY.day <= 26) or (TODAY.month == 11 and TODAY.day >= 15), json=lambda o: Markup(json.dumps(o, ensure_ascii=False).replace("</", "<\\/")))
 M = None  # módulo de macros (carregado após o env)
 
 def related(a, n=4):

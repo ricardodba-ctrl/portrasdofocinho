@@ -12,6 +12,7 @@ sources:
   - name: "Coren, S. (1994). The Intelligence of Dogs. Free Press."
   - name: "Andics, A. et al. (2016). Neural mechanisms for lexical processing in dogs. Science."
     url: "https://www.science.org/doi/10.1126/science.aaf3777"
+products: [tapete-farejar, kong-recheavel, comedouro-lento]
 ---
 
 Border Collie, Poodle e Pastor Alemão aparecem no topo de quase toda lista de “cães mais inteligentes”. Essas listas têm uma origem específica, e entender de onde elas vêm muda a forma como olhamos para qualquer cachorro.

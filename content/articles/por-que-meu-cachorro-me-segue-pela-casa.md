@@ -13,6 +13,7 @@ faq:
     a: "Sim, para muitos cães é normal. Você é a principal fonte de comida, passeio e companhia, e ele quer saber o que vai acontecer. Só merece atenção se vier acompanhado de sofrimento quando ele não consegue chegar até você."
   - q: "Existe raça mais grudenta?"
     a: "Raças desenvolvidas para trabalhar em estreita parceria com humanos, como cães de pastoreio e de companhia, costumam acompanhar mais o tutor. Mas a história individual do cão pesa tanto quanto a raça."
+products: [kong-recheavel, tapete-farejar, tapete-lamber]
 ---
 
 Você levanta do sofá e, em um segundo, tem uma sombra de quatro patas atrás de você. Até o banheiro. Esse comportamento é tão comum que, em inglês, cães assim ganharam o apelido de “cães velcro”. Na maior parte das vezes, não há nada de errado. Mas há situações em que vale olhar com mais cuidado.

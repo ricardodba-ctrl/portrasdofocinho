@@ -42,6 +42,7 @@ try{if(localStorage.getItem('ptf-consent')==='all'){gtag('consent','update',{ad_
       <button class="nav-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
       <ul id="menu">
         {% for c in cats %}<li><a href="{{ url('categoria/' ~ c.slug) }}">{{ c.short }}</a></li>{% endfor %}
+        {% if natal_season %}<li class="hl"><a href="{{ url('natal') }}">Natal</a></li>{% endif %}
         <li class="hl"><a href="{{ url('patas-que-transformam') }}">Patas que Transformam</a></li>
       </ul>
     </nav>

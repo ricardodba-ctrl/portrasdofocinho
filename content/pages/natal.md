@@ -49,7 +49,7 @@ Comeu alguma coisa dessa lista? **Ligue para o veterinário na hora**, sem esper
 ## Visitas, fogos e viagem
 
 - **Visitas:** deixe um cômodo só do pet, com água, caminha (ou caixa de areia) e silêncio. Não puxe o gato de debaixo da cama: ele sai quando se sente seguro.
-- **Fogos:** monte o cantinho seguro antes da festa, com janela e cortina fechadas, a caminha dele, uma roupa com o seu cheiro e música baixa. Se o medo for muito forte, converse com o veterinário **antes** da virada.
+- **Fogos:** monte o cantinho seguro antes da festa, com janela e cortina fechadas, a caminha dele, uma roupa com o seu cheiro e música baixa. Se o medo for muito forte, converse com o veterinário **antes** da virada. Veja o guia completo: [cachorro com medo de fogos](@cachorro-com-medo-de-fogos).
 - **Viagem:** leve a ração de sempre (trocar de repente atrapalha o intestino), água, guia, plaquinha com telefone e a carteira de vacinação.
 
 ## A nossa história de Natal

@@ -14,6 +14,7 @@ faq:
     a: "Sim. Com um adulto você já conhece o porte, o nível de energia e boa parte do temperamento, o que facilita escolher um animal compatível com a sua rotina. Muitos adultos já sabem fazer as necessidades no lugar certo."
   - q: "Por que a ONG faz tantas perguntas e pede visita?"
     a: "Entrevistas, termo de adoção e acompanhamento ajudam a garantir que o animal vá para um lar preparado e evitam devoluções e novos abandonos. É um sinal de seriedade."
+products: [caixa-transporte, ml-pote-racao, cama-ninho]
 ---
 
 Adotar muda duas vidas: a do animal e a sua. Para que a história dê certo, a decisão precisa ser tomada com o coração e também com a cabeça. Um cão ou gato pode viver mais de 10 ou 15 anos, e vai depender de você em todos eles.

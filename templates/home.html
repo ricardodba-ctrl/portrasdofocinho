@@ -26,6 +26,13 @@
   </form>
 </section>
 
+{% if natal_season %}
+<section class="band band-tint">
+  <div class="sec-head"><h2>Natal do Focinho</h2><p>Presentes que cães e gatos usam de verdade e os cuidados que evitam susto na ceia, com fogos e em viagem.</p></div>
+  <p><a class="btn btn-amber" href="{{ url('natal') }}">Ver o guia de Natal</a></p>
+</section>
+{% endif %}
+
 <section class="band">
   <div class="sec-head"><h2>Comece por aqui</h2><p>Os guias completos que respondem às dúvidas mais comuns de quem convive com cães e gatos.</p></div>
   {{ m.card_row(pillars[:3], "l") }}

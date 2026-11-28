@@ -8,6 +8,7 @@ date: 2026-11-08
 cluster: comportamento-canino
 keywords: [cachorro lambe as mãos, por que o cachorro lambe, cachorro lambe muito]
 related: [comportamento-do-cachorro-guia-completo, ansiedade-de-separacao-em-caes]
+products: [tapete-lamber, kong-recheavel]
 ---
 
 As lambidas fazem parte da vida com um cachorro. Algumas são breves e carinhosas, outras parecem não ter fim. Lamber é um comportamento natural e cheio de significados, e o contexto ajuda a entender qual é o caso do seu cão.
